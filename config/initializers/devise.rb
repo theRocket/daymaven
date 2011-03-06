@@ -52,7 +52,7 @@ Devise.setup do |config|
   # The realm used in Http Basic Authentication. "Application" by default.
   # config.http_authentication_realm = "Application"
   authprov = oa_config[:provider]
-  config.omniauth :facebook, authprov[:api_key], authprov[:secret_key]
+  config.omniauth :facebook, authprov["api_key"], authprov["secret_key"]
   
   # ==> Configuration for :database_authenticatable
   # For bcrypt, this is the cost for hashing the password and defaults to 10. If
