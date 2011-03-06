@@ -1,7 +1,7 @@
 class DaysController < ApplicationController
   helper :all
 
-  before_filter :authenticate, :except => [:index,:show]
+  before_filter :authenticate_user!, :except => [:index,:show]
 
     # GET /days
     # GET /days.xml

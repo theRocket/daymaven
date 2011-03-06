@@ -5,29 +5,13 @@
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
-
-	<style type="text/css" media="screen">
-		ul.hmenu {
-		  list-style: none;	
-		  margin: 0 0 2em;
-		  padding: 0;
-		}
-
-		ul.hmenu li {
-		  display: inline;
-		}
-	</style>
 </head>
 <body>
-
+	<%= link_to image_tag("/images/daymaven_logo.jpg", :border =>0), root_url %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
 <%= yield %>
 
-	<ul class="hmenu">
-	  <%= render 'users/registration_items' %>
-	  <%= render 'users/login_items' %>
-	</ul>
 </body>
 </html>

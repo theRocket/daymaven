@@ -1,10 +1,20 @@
-<h1>Find a Day</h1>
-<search id="testit">	
-	<%= form_tag days_path, :method => 'get' do %>
-		<%= text_field_tag :search, params[:search] %>
-		<%= submit_tag "Search", :name => nil %>
-	<% end %>
-</search>
+<% @days.each do |day| %>
+ <div class="title">
+      <%= link_to day.title, day %>
+   </div>
+  <div class="description" >
+    <%= auto_link(day.description) %>
+    <%= day.created_at %>
+	</div>
+	
+	
+   <!--  <%= link_to 'Show', day %>  -->
+    <!-- <td><%= link_to 'Edit', edit_day_path(day) %></td>  -->
+    <!-- <td><%= link_to 'Destroy', day, :confirm => 'Are you sure?', :method => :delete %></td>    -->
 
-<h1>Top-rated Days</h1>
-<p><i>use a partial</i></p>
+<% end %>
+
+
+<br>
+
+<%= link_to 'New Day', new_day_path %>
