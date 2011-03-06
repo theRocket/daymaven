@@ -1,7 +1,8 @@
 Daymaven::Application.routes.draw do
   get "days/index"
   get "days/show"
-
+  resources :days
+  
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   devise_for :admins
 

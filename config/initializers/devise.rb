@@ -1,3 +1,7 @@
+oa_config_file = File.join(Rails.root,'config','devise.yml')
+raise "#{oa_config_file} is missing!" unless File.exists? oa_config_file
+oa_config = YAML.load_file(oa_config_file)[Rails.env].symbolize_keys
+
 # Use this hook to configure devise mailer, warden hooks and so forth. The first
 # four configuration values can also be set straight in your models.
 Devise.setup do |config|
@@ -47,8 +51,8 @@ Devise.setup do |config|
 
   # The realm used in Http Basic Authentication. "Application" by default.
   # config.http_authentication_realm = "Application"
-
-  config.omniauth :facebook, '204598156217647', 'e9a9920ce353ea77bc0bc489ec1d6e73' #127.0.0.1, from Jake
+  authprov = oa_config[:provider]
+  config.omniauth :facebook, authprov[:api_key], authprov[:secret_key]
   
   # ==> Configuration for :database_authenticatable
   # For bcrypt, this is the cost for hashing the password and defaults to 10. If
