@@ -7,9 +7,11 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
 <%= yield %>
 
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
 </body>
 </html>

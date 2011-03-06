@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :days
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   devise :omniauthable, :database_authenticatable, :registerable,
