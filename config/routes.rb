@@ -1,10 +1,13 @@
 Daymaven::Application.routes.draw do
+
   get "days/search"
   resources :days
   
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  devise_for :admins
 
+  namespace :users do
+    resources :authentications
+  end
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

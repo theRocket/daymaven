@@ -1,15 +1,21 @@
 development:
   url: localhost:3000
-  provider: 
-    name: facebook
+  facebook:
     app_id: 204598156217647
     api_key: 6afaa9652f47457d6fc965bc18400a3b
     secret_key: e9a9920ce353ea77bc0bc489ec1d6e73
+  twitter:
+    api_key: VUSvCGhaEbj8OkuEUEE0A
+    consumer_key: VUSvCGhaEbj8OkuEUEE0A
+    consumer_secret: AWRky9BAwptfj5Qegs1fklDXr9etnvWzB2IOQs6SU
     
 production:
     url: daymaven.heroku.com
-    provider:
-      name: facebook
+    facebook:
       app_id: 134438253292800
       api_key: c788e30bc887f0fe46ad0999adb14785
       secret_key: d1d20c35ed7e897f295d3e5f261b90b0
+    twitter:
+      api_key: VUSvCGhaEbj8OkuEUEE0A
+      consumer_key: VUSvCGhaEbj8OkuEUEE0A
+      consumer_secret: AWRky9BAwptfj5Qegs1fklDXr9etnvWzB2IOQs6SU
