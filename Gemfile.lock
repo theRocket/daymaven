@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/theRocket/more.git
+  revision: 0f2590398db37a09701c3d1c09a116d94dd8fb91
+  specs:
+    more (0.0.4)
+      less
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -49,6 +56,9 @@ GEM
       rest-client (>= 1.4)
     i18n (0.5.0)
     json (1.5.1)
+    less (1.2.21)
+      mutter (>= 0.4.2)
+      treetop (>= 1.4.2)
     mail (2.2.15)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
@@ -58,6 +68,7 @@ GEM
     mocha (0.9.12)
     multi_json (0.0.5)
     multipart-post (1.1.0)
+    mutter (0.5.3)
     mysql2 (0.2.6)
     nifty-generators (0.4.5)
     nokogiri (1.4.4)
@@ -110,6 +121,7 @@ DEPENDENCIES
   devise (= 1.2.rc)
   fb_graph
   mocha
+  more!
   mysql2
   nifty-generators
   oa-oauth (= 0.2.0.beta5)
