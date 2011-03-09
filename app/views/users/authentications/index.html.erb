@@ -18,17 +18,11 @@
   <p><strong>Add another service to sign in with:</strong></p>
 <% else %>
   <div>
-  <p><strong>Sign in through one of these services:</strong></p>
+  <p><strong>Register one of these services:</strong></p>
 <% end %>
 
-<a href="/auth/twitter" class="auth_provider">
-  <%= image_tag "/images/twitter_64.png", :size => "64x64", :alt => "Twitter" %>
-  Twitter
-</a>
-<a href="/auth/facebook" class="auth_provider">
-  <%= image_tag "/images/facebook_64.png", :size => "64x64", :alt => "Facebook" %>
-  Facebook
-</a>
+<%= link_to image_tag("/images/twitter_64.png", :size => "64x64", :alt => "Twitter"), user_omniauth_authorize_path(:twitter), :class => "auth_provider" %>
+<%= link_to image_tag("/images/facebook_64.png", :size => "64x64", :alt => "Facebook"), user_omniauth_authorize_path(:facebook), :class => "auth_provider" %>
 <!-- <a href="/auth/google_apps" class="auth_provider">
   <%= image_tag "/images/google_64.png", :size => "64x64", :alt => "Google" %>
   Google

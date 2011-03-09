@@ -5,7 +5,6 @@ gem 'rails', '3.0.5'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
 gem 'devise', '1.2.rc'
 gem "oa-oauth", '0.2.0.beta5', :require => "omniauth/oauth"
 gem "fb_graph"
@@ -33,7 +32,9 @@ gem "twitter"
 # and rake tasks are available in development mode:
 
 group :development do
+  gem 'mysql2' #Heroku does pg
   gem "nifty-generators"
+  gem "ruby-debug19"
 end
 
 gem "mocha", :group => :test
