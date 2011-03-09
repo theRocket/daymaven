@@ -20,12 +20,15 @@ class User < ActiveRecord::Base
   
   
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
+    logger.debug access_token['credentials']['token']
     data = access_token['extra']['user_hash']
     user = User.find_by_email(data["email"])
     if user.nil? # Create an user with a stub password. 
       user = User.create!(:name => data["name"], :email => data["email"], :password => Devise.friendly_token[0,20]) 
     end
-    user.authentications.build(:provider => access_token['provider'], :uid => access_token['uid'], :token =>(access_token['credentials']['token'] rescue nil))
+    if user.authentications.find_by_provider('facebook').nil? # Create an authentication with the FB token. 
+      user.authentications.build(:provider => access_token['provider'], :uid => access_token['uid'], :token => access_token['credentials']['token'])
+    end
     return user
   end
 
@@ -33,12 +36,4 @@ class User < ActiveRecord::Base
     @fb_user ||= FbGraph::User.me(self.authentications.find_by_provider('facebook').token)
   end
 
-
-  protected
-
-  def apply_facebook(omniauth)
-    if (extra = omniauth['extra']['user_hash'] rescue false)
-      self.email = (extra['email'] rescue '')
-    end
-  end
 end
