@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110307232914) do
+ActiveRecord::Schema.define(:version => 20110309064850) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20110307232914) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "token"
+    t.string   "secret"
   end
 
   create_table "days", :force => true do |t|
