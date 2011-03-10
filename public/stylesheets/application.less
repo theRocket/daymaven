@@ -1,3 +1,29 @@
+//trying out Less example
+@import "960";
+
+#Wrapper {
+	.container_12;
+	.clearfix;
+}
+
+#Page {
+	.grid960(7);
+	.push960(5);
+}
+
+#Sidebar{
+	.grid960(5);
+	.pull960(7);
+}
+#Footer {
+	.container_12;
+	//create 6 equal columns 
+	> .section {
+		.grid960(2);
+		.alpha;
+	}
+}
+
 body{background-color:#fcfcfc;color:#222;}
 a,a:visited{color:#226; }
 
@@ -50,8 +76,6 @@ font-size: 24px;
 padding: 6px;
 }
 
-
-
 div.centered.panel {
 
 width:740px;margin:0px auto;margin-top:20px;
@@ -76,8 +100,6 @@ color: #2B2B2B;
 text-shadow: #CECECE 0px 1px 1px;
 border-top-left-radius: 5px 5px;
 border-top-right-radius: 5px 5px;
-
-
 }
 
 h1 {
