@@ -22,15 +22,3 @@
   </li>
 <% end %>
 </ul>
-
-<%- if !user_signed_in? %>
-Sign in with:
-<ul class="hmenu">
-	  <li>
-		<%= link_to image_tag("/images/facebook_32.png"), user_omniauth_authorize_path(:facebook) %>
-	  </li>
-	<!-- no email in Twitter profile! <li>
-		<%= link_to image_tag("/images/twitter_32.png"), user_omniauth_authorize_path(:twitter) %>
-	  </li> -->
-</ul>
-<% end %>

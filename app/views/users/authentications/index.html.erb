@@ -1,9 +1,8 @@
 
 <% title "Sign In" %>
 
-<% if @authentications %>
-  <% unless @authentications.empty? %>
-    <p><strong>You can sign in to this account using:</strong></p>
+<% unless @authentications.empty? %>
+    <p><strong>You have signed into this account using:</strong></p>
     <div class="authentications"> <!-- outer div -->
       <% for authentication in @authentications %>
         <div class="authentication"> <!-- inner -->
@@ -14,22 +13,14 @@
       <% end %>
       <div class="clear"></div>
     </div>  <!-- end outer div -->
-  <% end %>
-  <p><strong>Add another service to sign in with:</strong></p>
-<% else %>
-  <div>
-  <p><strong>Register one of these services:</strong></p>
 <% end %>
-
-<%= link_to image_tag("/images/twitter_64.png", :size => "64x64", :alt => "Twitter"), user_omniauth_authorize_path(:twitter), :class => "auth_provider" %>
-<%= link_to image_tag("/images/facebook_64.png", :size => "64x64", :alt => "Facebook"), user_omniauth_authorize_path(:facebook), :class => "auth_provider" %>
-<!-- <a href="/auth/google_apps" class="auth_provider">
-  <%= image_tag "/images/google_64.png", :size => "64x64", :alt => "Google" %>
-  Google
-</a>
-<a href="/auth/open_id" class="auth_provider">
-  <%= image_tag "/images/openid_64.png", :size => "64x64", :alt => "OpenID" %>
-  OpenID
-</a> -->
+<% unless @providers_noauth.empty? %>
+  <p><strong>Register a new service:</strong></p>
+	<%- @providers_noauth.each do |prov| %>
+	   <%= link_to image_tag("/images/#{prov}_64.png", :size => "64x64", :alt => prov), user_omniauth_authorize_path(prov.to_sym), :class => "auth_provider" %>
+	<% end -%>
+<% end %>
 <div class="clear"></div>
+<br/>
+<%= link_to "Back", :back %>
 
