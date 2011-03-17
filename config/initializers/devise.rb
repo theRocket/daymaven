@@ -1,4 +1,4 @@
-oa_config_file = File.join(Rails.root,'config','devise.yml')
+oa_config_file = File.join(Rails.root,'config','api_keys.yml')
 raise "#{oa_config_file} is missing!" unless File.exists? oa_config_file
 oa_config = YAML.load_file(oa_config_file)[Rails.env].symbolize_keys
 

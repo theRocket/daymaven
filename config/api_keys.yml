@@ -1,0 +1,27 @@
+common: &common
+    twitter:
+      api_key: VUSvCGhaEbj8OkuEUEE0A
+      consumer_key: VUSvCGhaEbj8OkuEUEE0A
+      consumer_secret: AWRky9BAwptfj5Qegs1fklDXr9etnvWzB2IOQs6SU
+    yelp:
+        
+development:
+  <<: *common
+  url: localhost:3000
+  facebook:
+    app_id: 204598156217647
+    api_key: 6afaa9652f47457d6fc965bc18400a3b
+    secret_key: e9a9920ce353ea77bc0bc489ec1d6e73
+  google_map:
+    api_key: ABQIAAAA60g1pdPgnY4z9NWm6WKWvxTJQa0g3IQ9GZqIMmInSLzwtGDKaBRlJ7nBXrhFjuS0u45axCVeudJzkQ
+  
+    
+production:
+    <<: *common
+    url: daymaven.heroku.com
+    facebook:
+      app_id: 134438253292800
+      api_key: c788e30bc887f0fe46ad0999adb14785
+      secret_key: d1d20c35ed7e897f295d3e5f261b90b0
+    google_map:
+      api_key: ABQIAAAA60g1pdPgnY4z9NWm6WKWvxR571c-r_cMBqJF57lhLDKElNB3_xS1gve9tfrYo2TJihr_tkTnmL9-aw
