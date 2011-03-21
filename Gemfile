@@ -4,7 +4,7 @@ gem 'rails', '3.0.5'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+gem "haml"
 gem 'devise', '1.2.rc'
 gem "oa-oauth", '0.2.0.beta5', :require => "omniauth/oauth"
 gem "fb_graph"

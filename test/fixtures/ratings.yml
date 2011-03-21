@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  value: 1
+  user: 
+  day: 
+
+two:
+  value: 1
+  user: 
+  day: 

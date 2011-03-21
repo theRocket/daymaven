@@ -2,7 +2,7 @@ Daymaven::Application.routes.draw do
 
   get "days/search"
   resources :days
-  
+  resources :ratings
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   namespace :users do

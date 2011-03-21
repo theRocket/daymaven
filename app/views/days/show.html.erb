@@ -13,6 +13,21 @@
   <%= auto_link(@day.description) %>
 </p>
 
+<table class="rating">
+ <thead><tr colspan="2"><td>Photo Ratings</td></tr></thead>
+  <tr>
+	<td>Average Rating</td>
+	<td><%= @day.average_rating %></td>
+  </tr>
+  <tr>
+	<td>Your Rating</td>
+	<td><%= current_user_rating %></td>
+  </tr>
+</table>
+
+<%- if current_user %>	
+ <%= render 'rating' %>
+<% end %>
 
 <%= link_to 'Back', days_path %>
 

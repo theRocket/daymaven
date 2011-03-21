@@ -51,6 +51,7 @@ GEM
       json (>= 1.4.3)
       oauth2 (>= 0.1.0)
       rest-client (>= 1.4)
+    haml (3.0.25)
     hashie (1.0.0)
     i18n (0.5.0)
     json (1.5.1)
@@ -135,6 +136,7 @@ PLATFORMS
 DEPENDENCIES
   devise (= 1.2.rc)
   fb_graph
+  haml
   mocha
   mysql2
   nifty-generators
