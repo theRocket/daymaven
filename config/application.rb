@@ -13,6 +13,9 @@ module Daymaven
     config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
     config.action_view.javascript_expansions[:cdn] = %w(https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js rails)
 
+    # use syck instead of psych because of issues with <<: *common
+    YAML::ENGINE.yamler = 'syck'
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
