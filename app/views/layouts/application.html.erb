@@ -1,21 +1,89 @@
 <!DOCTYPE html>
+
+<%= stylesheet_link_tag :all %>
+
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=s&sensor=true_or_false"
+            type="text/javascript"></script>
+    <script type="text/javascript">
+
+    function initialize() 
+    {
+      if (GBrowserIsCompatible()) 
+      {
+        var map = new GMap2(document.getElementById("map"));
+        map.setCenter(new GLatLng(48.76152, -122.4978133), 13);
+        map.setUIToDefault();
+                  map.enableGoogleBar();
+
+        
+          var point = new GLatLng(48.76152, -122.4978133);
+				          map.addOverlay(new GMarker(point));
+			          
+		var myEventListener = GEvent.bind(map, "click", this, function(overlay, latlng) 
+						          {
+											            if (latlng) 
+											            {
+											               map.addOverlay(new GMarker(latlng))
+											            } 
+											        
+											      }); 
+
+
+      }
+    }
+
+ </script>
+    
 <html>
 <head>
-  <title>DayMaven</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :cdn, "less" %>
-  <%= yield :scripts %>
-  <%= csrf_meta_tag %>
+	<title>daymaven</title>  
 </head>
 <body>
-<div id="wrapper">
-	<div id="page">
-	<%= link_to image_tag("/images/daymaven_logo.jpg", :border =>0), root_url %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
-	<%= yield %>
- </div>
-</div>
+<div id = "container">
+	<div id="header">
+
+		<img id = "logo"; src="/images/daymaven.png";  />
+
+		<search id="searchbar">	
+			<%= form_tag days_path, :method => 'get' do %>
+			<%= text_field_tag :search, params[:search] %>
+			<%= submit_tag "Search", :name => nil %>
+			<% end %>
+		</search>
+	
+
+		<div id="newday">
+		
+				<%= link_to 'NEW DAY', new_day_path %>
+		</div>
+	
+
+  
+		<div id="user">
+
+			<%= render 'users/login_items' %>
+   </div>
+	</div>
+
+	<div id="wrapper">
+		<div id="content">
+			<%= yield %>	
+		</div>
+	</div>
+
+	<body onload="initialize()" onunload="GUnload()">
+		<div id="map"> </div>
+ 	</body>
+
+
+	<div id="footer">
+		<iframe src="http://www.facebook.com/plugins/like.php?href=www.daymaven.com"
+        scrolling="no" frameborder="0"
+        style="border:none; width:450px; height:80px"></iframe></div>
+
+	</div>
+	
 </body>
 </html>
+
