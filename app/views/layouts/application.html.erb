@@ -36,7 +36,11 @@
     
 <html>
 <head>
-	<title>daymaven</title>  
+  <title>DayMaven</title>
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag :cdn, "less" %>
+  <%= yield :scripts %>
+  <%= csrf_meta_tag %>
 </head>
 <body>
 

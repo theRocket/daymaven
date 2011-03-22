@@ -14,3 +14,4 @@
     = radio_button_tag("rating[value]", 5, current_user_rating == 5, :class => 'rating_button')
 
     = hidden_field_tag("day_id", @day.id)
+    = f.submit :Submit
