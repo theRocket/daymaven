@@ -12,6 +12,7 @@ module Daymaven
     # http://github.com/lleger/Rails-3-jQuery, written by Logan Leger
     config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
     config.action_view.javascript_expansions[:cdn] = %w(https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js rails)
+		config.action_view.javascript_expansions[:gmaps] = %w(http://maps.google.com/maps?file=api&v=2&key=s&sensor=true_or_false)
 
     # use syck instead of psych because of issues with <<: *common
     YAML::ENGINE.yamler = 'syck'

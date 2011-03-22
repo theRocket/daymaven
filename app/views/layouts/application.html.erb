@@ -2,43 +2,14 @@
 
 <%= stylesheet_link_tag :all %>
 
-<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=s&sensor=true_or_false"
-            type="text/javascript"></script>
-    <script type="text/javascript">
 
-    function initialize() 
-    {
-      if (GBrowserIsCompatible()) 
-      {
-        var map = new GMap2(document.getElementById("map"));
-        map.setCenter(new GLatLng(48.76152, -122.4978133), 13);
-        map.setUIToDefault();
-                  map.enableGoogleBar();
-
-        
-          var point = new GLatLng(48.76152, -122.4978133);
-				          map.addOverlay(new GMarker(point));
-			          
-		var myEventListener = GEvent.bind(map, "click", this, function(overlay, latlng) 
-						          {
-											            if (latlng) 
-											            {
-											               map.addOverlay(new GMarker(latlng))
-											            } 
-											        
-											      }); 
-
-
-      }
-    }
-
- </script>
     
 <html>
 <head>
   <title>DayMaven</title>
   <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag :cdn, "less" %>
+  <%= javascript_include_tag :gmaps, "googlemap" %>
   <%= yield :scripts %>
   <%= csrf_meta_tag %>
 </head>
@@ -72,6 +43,8 @@
 
 	<div id="wrapper">
 		<div id="content">
+		  <p class="notice"><%= notice %></p>		
+   		<p class="alert"><%= alert %></p>
 			<%= yield %>	
 		</div>
 	</div>
