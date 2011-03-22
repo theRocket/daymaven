@@ -1,0 +1,43 @@
+/* Grid Constants
+----------------------------------------------------------------------------------------------------*/
+/* Containers */
+.container_12 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+}
+/* instead of grid_1, grid_2, etc. */
+/* instead of prefix_1, prefix_2, etc. */
+/* instead of sufix_1, sufix_2, etc. */
+/* instead of push_1, push_2, etc. */
+/* instead of pull_1, pull_2, etc. */
+.alpha {
+  margin-left: 0;
+}
+.omega {
+  margin-right: 0;
+}
+/* http://sonspring.com/journal/clearing-floats */
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+.clearfix:after {
+  clear: both;
+  content: ' ';
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
