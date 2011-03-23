@@ -23,6 +23,18 @@ div#container {
   background-image: -moz-linear-gradient(top, #cecece, #8a8a8a);
   background-image: -webkit-gradient(linear, left top, left bottom, from(#cecece), to(#8a8a8a));
 }
+#city {
+  float: left;
+  position: relative;
+  left: 180px;
+  top: -23px;
+}
+#searchbutton {
+  float: left;
+  position: relative;
+  left: 195px;
+  top: -23px;
+}
 div#content {
   float: left;
   margin: 10px 0px;
@@ -60,23 +72,33 @@ div#header {
   overflow: hidden;
   background-image: -moz-linear-gradient(top, #54f73f, #37f61e);
   background-image: -webkit-gradient(linear, left top, left bottom, from(#54f73f), to(#37f61e));
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
+}
+div#navbar {
+  height: 25px;
+  margin: 0;
+  line-height: 20px;
+  padding: 6px 10px 0px;
+  overflow: hidden;
+  background-image: -moz-linear-gradient(top, #63f84f, #8efa80);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#63f84f), to(#8efa80));
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
   -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
   -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
 }
 div#footer {
   clear: both;
+  text-align: center;
   width: 100%;
-  background-color: #37f61e;
+  height: 65px;
+  margin: 0;
+  line-height: 20px;
+  padding: 6px 10px 0px;
+  overflow: hidden;
   background-image: -moz-linear-gradient(top, #54f73f, #37f61e);
   background-image: -webkit-gradient(linear, left top, left bottom, from(#54f73f), to(#37f61e));
-  text-align: center;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
   -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
   -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
@@ -85,18 +107,18 @@ div#footer {
   margin: 2px 1px 2px 4px;
   display: inline-block;
   position: relative;
-  left: -40px;
+  left: 20px;
   top: 15px;
   width: 285px;
   height: 19px;
 }
-#newday {
+#newdayd {
   float: left;
   margin: 0px;
   padding: 0px;
   position: relative;
-  left: 318px;
-  top: 20px;
+  left: 50px;
+  top: 0px;
   color: #ff8a16;
   padding: 1px 4px;
   border-radius: 7px;
@@ -130,7 +152,7 @@ div#footer {
   height: 26px;
   position: relative;
   left: 670px;
-  top: -60px;
+  top: -35px;
 }
 DIV.title { font-size: 22px; }
 DIV.description { font-size: 12px; }

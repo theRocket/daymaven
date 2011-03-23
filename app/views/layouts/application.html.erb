@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 
 <%= stylesheet_link_tag :all %>
-
-
-    
+<link type="text/css" rel="stylesheet" href="http://freebaselibs.com/static/suggest/1.3/suggest.min.css" />
+	
+   
 <html>
 <head>
   <title>DayMaven</title>
   <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag :cdn, "less" %>
   <%= javascript_include_tag :gmaps, "googlemap" %>
+  <%= javascript_include_tag :freebase, "freebase" %>
   <%= yield :scripts %>
   <%= csrf_meta_tag %>
 </head>
+
 <body>
 
 <div id = "container">
@@ -23,22 +25,21 @@
 		<search id="searchbar">	
 			<%= form_tag days_path, :method => 'get' do %>
 			<%= text_field_tag :search, params[:search] %>
-			<%= submit_tag "Search", :name => nil %>
+			City<%= text_field_tag :city, params[:city], :id=>"city" %>
+			<%= submit_tag "Search", :id => "searchbutton" %>
 			<% end %>
 		</search>
-	
-
-		<div id="newday">
-		
-				<%= link_to 'NEW DAY', new_day_path %>
-		</div>
-	
-
   
 		<div id="user">
-
 			<%= render 'users/login_items' %>
-   </div>
+    </div>
+  </div>
+	
+	<div id="navbar">
+			<div id="newday">
+			<%= link_to 'Home', days_path %>
+					<%= link_to 'New Day', new_day_path %>
+			</div>
 	</div>
 
 	<div id="wrapper">
@@ -47,20 +48,19 @@
    		<p class="alert"><%= alert %></p>
 			<%= yield %>	
 		</div>
-	</div>
 
-	<body onload="initialize()" onunload="GUnload()">
+	  <body onload="initialize()" onunload="GUnload()">
 		<div id="map"> </div>
- 	</body>
+ 	  </body>
 
 
-	<div id="footer">
-		<iframe src="http://www.facebook.com/plugins/like.php?href=www.daymaven.com"
+	  <div id="footer">
+			<iframe src="http://www.facebook.com/plugins/like.php?href=www.daymaven.com"
         scrolling="no" frameborder="0"
-        style="border:none; width:450px; height:80px"></iframe></div>
-
+        style="border:none; width:450px; height:80px"></iframe>
+    </div>
 	</div>
-	
+</div>
 </body>
 </html>
 
