@@ -13,13 +13,27 @@
     </div>
   <% end %>
 
+   
+		
+   <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location, :size => 50 %>
+  </div>
+   <div class="field">
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude, :size => 50 %>
+  </div>
+   <div class="field">
+    <%= f.label :longitude %><br />
+    <%= f.text_field :longitude, :size => 50 %>
+  </div>
    <div class="field">
     <%= f.label :title %><br />
-    <%= f.text_field :title, :size => 105 %>
+    <%= f.text_field :title, :size => 60 %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_area :description, :cols => 80, :rows => 10 %>
+    <%= f.text_area :description, :cols => 60, :rows => 10 %>
   </div>
   <div class="actions">
     <%= f.submit %>
