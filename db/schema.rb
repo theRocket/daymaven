@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110321034203) do
+ActiveRecord::Schema.define(:version => 20110325191103) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -25,11 +25,12 @@ ActiveRecord::Schema.define(:version => 20110321034203) do
   create_table "days", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.integer  "latitude"
-    t.integer  "longitude"
+    t.decimal  "latitude"
+    t.decimal  "longitude"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "location"
   end
 
   create_table "ratings", :force => true do |t|
