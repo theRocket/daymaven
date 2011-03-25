@@ -1,4 +1,4 @@
 $(function() {
-	$("#city").suggest({type:'location/City/Town/Village'});
+	$("#city").suggest({type:'location/City/Town'});
 });
 	

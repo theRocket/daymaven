@@ -8,9 +8,18 @@
 <head>
   <title>DayMaven</title>
   <%= stylesheet_link_tag "application" %>
-  <%= javascript_include_tag :cdn, "less" %>
-  <%= javascript_include_tag :gmaps, "googlemap" %>
-  <%= javascript_include_tag :freebase, "freebase" %>
+  <%= javascript_include_tag "less" %>
+   <%= javascript_include_tag :defaults, "geokit" %>
+ <%= javascript_include_tag :gmaps, "googlemap" %>
+  
+    <script type="text/javascript">
+	$(function () {
+		$('#city').location_autocomplete();
+		});
+		
+</script>
+
+ 
   <%= yield :scripts %>
   <%= csrf_meta_tag %>
 </head>

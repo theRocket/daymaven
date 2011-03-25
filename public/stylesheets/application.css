@@ -29,6 +29,8 @@ div#container {
   left: 180px;
   top: -23px;
 }
+
+
 #searchbutton {
   float: left;
   position: relative;
@@ -153,6 +155,51 @@ div#footer {
   position: relative;
   left: 670px;
   top: -35px;
+}
+
+/* Autocompleter */
+ul.ui-autocomplete {
+padding: 0px;
+border: 1px solid black;
+background-color: white;
+overflow: hidden;
+z-index: 99999;
+width: 100%;
+list-style-position: outside;
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+
+ul.ui-autocomplete li {
+margin: 0px;
+padding:0px;
+cursor: default;
+display: block;
+
+
+font: menu;
+overflow: hidden;
+}
+
+
+.ui-autocomplete-loading {
+background: white url('/images/indicator.gif') right center no-repeat;
+}
+
+
+ul.ui-autocomplete a {
+display:block;
+font-size: 12px;
+padding: 2px 5px;
+line-height: 16px;
+}
+
+
+ul.ui-autocomplete a.ui-state-hover {
+background-color: #99f;
+color: white;
 }
 
 #smalltabs li{list-style-type:none;display:inline; }
