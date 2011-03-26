@@ -53,12 +53,12 @@ GEM
       oauth2 (>= 0.1.0)
       rest-client (>= 1.4)
     geokit (1.5.0)
+    geokit-rails3 (0.1.3)
+      geokit (~> 1.5.0)
+      rails (~> 3.0.4)
     haml (3.0.25)
     hashie (1.0.0)
     i18n (0.5.0)
-    jquery-rails (0.2.7)
-      rails (~> 3.0)
-      thor (~> 0.14.4)
     json (1.5.1)
     json (1.5.1-x86-mingw32)
     linecache19 (0.5.11)
@@ -149,9 +149,8 @@ PLATFORMS
 DEPENDENCIES
   devise (= 1.2.rc)
   fb_graph
-  geokit
+  geokit-rails3
   haml
-  jquery-rails
   mocha
   mysql2
   nifty-generators
