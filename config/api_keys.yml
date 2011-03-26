@@ -24,4 +24,4 @@ production:
       api_key: c788e30bc887f0fe46ad0999adb14785
       secret_key: d1d20c35ed7e897f295d3e5f261b90b0
     google_map:
-      api_key: ABQIAAAA60g1pdPgnY4z9NWm6WKWvxR571c-r_cMBqJF57lhLDKElNB3_xS1gve9tfrYo2TJihr_tkTnmL9-aw
+      api_key: ABQIAAAAnlzUvzCoMlSC-rAYXxLPbhR571c-r_cMBqJF57lhLDKElNB3_xQ05nTyDOnRX6zOHqMNnUp2L15fGg
