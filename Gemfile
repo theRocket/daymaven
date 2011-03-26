@@ -9,8 +9,7 @@ gem 'devise', '1.2.rc'
 gem "oa-oauth", '0.2.0.beta5', :require => "omniauth/oauth"
 gem "fb_graph"
 gem "twitter"
-gem "geokit"
-gem "jquery-rails"
+gem "geokit-rails3"
 #gem "more", :git => "git://github.com/theRocket/more.git" # Rails 3 and Heroku compatible fork
 
 # Use unicorn as the web server
@@ -36,7 +35,7 @@ group :development do
   gem 'mysql2' #Heroku does pg
   gem 'sqlite3-ruby', :require => 'sqlite3'
   gem "nifty-generators"
-  gem "ruby-debug19"
+  gem "ruby-debug19", :require => 'ruby-debug'
 end
 
 gem "mocha", :group => :test
