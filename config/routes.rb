@@ -3,6 +3,7 @@ Daymaven::Application.routes.draw do
   get "days/search"
   resources :days
   resources :ratings
+  resources :locations
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   namespace :users do
@@ -54,7 +55,7 @@ Daymaven::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "days#search"
+  root :to => "days#index"
 
   # See how all your routes lay out with "rake routes"
 

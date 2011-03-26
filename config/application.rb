@@ -13,8 +13,9 @@ module Daymaven
   class Application < Rails::Application
     # Added by the Rails 3 jQuery Template
     # http://github.com/lleger/Rails-3-jQuery, written by Logan Leger
-    config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
-    config.action_view.javascript_expansions[:cdn] = %w(https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js rails)
+    config.action_view.javascript_expansions[:defaults] = %w(jquery jquery-ui rails)
+		config.action_view.javascript_expansions[:gmaps] = %w(http://maps.google.com/maps?file=api&v=2&key=s&sensor=true_or_false)
+ 		config.action_view.javascript_expansions[:freebase] = %w(http://freebaselibs.com/static/suggest/1.3/suggest.min.js)
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

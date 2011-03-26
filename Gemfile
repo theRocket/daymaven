@@ -9,6 +9,8 @@ gem 'devise', '1.2.rc'
 gem "oa-oauth", '0.2.0.beta5', :require => "omniauth/oauth"
 gem "fb_graph"
 gem "twitter"
+gem "geokit"
+gem "jquery-rails"
 #gem "more", :git => "git://github.com/theRocket/more.git" # Rails 3 and Heroku compatible fork
 
 # Use unicorn as the web server
@@ -38,3 +40,6 @@ group :development do
 end
 
 gem "mocha", :group => :test
+
+
+
