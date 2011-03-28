@@ -6,7 +6,7 @@ class DaysController < ApplicationController
     # GET /days
     # GET /days.xml
     def index
-  	@days = Day.search(params[:search])
+  	@days = Day.search(params[:search], params[:city])
 
       respond_to do |format|
         format.html # index.html.erb
