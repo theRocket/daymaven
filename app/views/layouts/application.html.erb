@@ -9,12 +9,12 @@
   <%= csrf_meta_tag %>
 </head>
 
-<body>
+<body onload="initialize()" onunload="GUnload()">
 
 <div id = "container">
 	<div id="header">
 
-		<img id = "logo"; src="/images/daymaven.png";  />
+		<%= link_to image_tag("/images/daymaven.png", :border =>0), days_path %>
 
 		<search id="searchbar">	
 			<%= form_tag days_path, :method => 'get' do %>
@@ -26,34 +26,27 @@
   
 		<div id="user">
 			<%= render 'users/login_items' %>
-    </div>
-    	<div id="smalltabs">				
-					<%= link_to 'Home', days_path %>
-					<%= link_to 'New Day', new_day_path %>
-			</div>
-  </div>
+		</div>
+    	<div id="smalltabs">
+			<ul>
+				<li><%= link_to 'Home', days_path %></li>
+				<li><%= link_to 'New Day', new_day_path %></li>
+			</ul>
+		</div>
+	</div>
 	
-	
-		
-	
-
 	<div id="wrapper">
 		<div id="content">
-		  <p class="notice"><%= notice %></p>		
-   		<p class="alert"><%= alert %></p>
+			<p class="notice"><%= notice %></p>		
+			<p class="alert"><%= alert %></p>
 			<%= yield %>	
 		</div>
 
-	  <body onload="initialize()" onunload="GUnload()">
 		<div id="map"> </div>
- 	  </body>
 
-
-	  <div id="footer">
-			<iframe src="http://www.facebook.com/plugins/like.php?href=www.daymaven.com"
-        scrolling="no" frameborder="0"
-        style="border:none; width:450px; height:80px"></iframe>
-    </div>
+		<div id="footer">
+			<iframe src="http://www.facebook.com/plugins/like.php?href=www.daymaven.com" scrolling="no" frameborder="0" style="border:none; width:450px; height:80px"></iframe>
+		</div>
 	</div>
 </div>
 </body>
