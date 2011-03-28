@@ -17,7 +17,7 @@
 		<img id = "logo"; src="/images/daymaven.png";  />
 
 		<search id="searchbar">	
-			<%= form_tag days_path, :method => 'get' do %>
+			<%= form_tag url_for(:controller => :days, :action => :search), :method => "get" do %>
 			<%= text_field_tag :search, params[:search] %>
 			City<%= text_field_tag :city, params[:city], :id=>"city" %>
 			<%= submit_tag "Search", :id => "searchbutton" %>

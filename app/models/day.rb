@@ -5,7 +5,12 @@ class Day < ActiveRecord::Base
   has_many :ratings
   has_many :raters, :through => :ratings, :source => :users
   
-  def self.search(search)
+  searchable do
+    text :title, :default_boost => 2
+    text :description
+  end
+  
+  def self.start_search(search)
     if search
       find(:all, :conditions => ['description LIKE ?', "%#{search}%"])
     else

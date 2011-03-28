@@ -1,0 +1,8 @@
+.results
+  - @search.each_hit_with_result do |hit, day|
+    .result
+      %h2= h day.title
+      %h6== (#{h hit.score})
+      %p= h truncate(day.description, :length => 100)
+.pagination
+  = will_paginate(@search.results)

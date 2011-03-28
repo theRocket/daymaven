@@ -6,12 +6,18 @@ class DaysController < ApplicationController
     # GET /days
     # GET /days.xml
     def index
-  	@days = Day.search(params[:search])
+  	@days = Day.start_search(params[:search])
 
       respond_to do |format|
         format.html # index.html.erb
         format.xml  { render :xml => @days }
       end
+    end
+    
+    def search
+        @search = Day.search do #(:include => [:comments])
+          keywords(params[:search])
+        end
     end
 
     # GET /days/1
