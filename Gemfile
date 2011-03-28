@@ -10,6 +10,7 @@ gem "oa-oauth", '0.2.0.beta5', :require => "omniauth/oauth"
 gem "fb_graph"
 gem "twitter"
 gem "geokit-rails3"
+gem "will_paginate", "~> 3.0.pre2"
 #gem "more", :git => "git://github.com/theRocket/more.git" # Rails 3 and Heroku compatible fork
 
 # Use unicorn as the web server

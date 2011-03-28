@@ -10,11 +10,17 @@
 
 <div class="rating">
 	Average Rating:&nbsp; <%= @day.average_rating %><br/>
-	Your Rating:<br/>
+<br/>
+<%- if @day.user == current_user %>
+	<%= link_to 'Edit Your Day', edit_day_path(@day) %><br/>
+   <%= link_to 'Delete Your Day', @day, :confirm => 'Are you sure?', :method => :delete %>
+<% else %>
+Your Rating:<br/>
 
-	<%- if current_user %>	
-	 <%= render 'rating' %>
-	<% end %>
+<%- if current_user %>	
+ <%= render 'rating' %>
+<% end %>
+<% end %>
 </div>
 <br/><br/>
 <%= link_to 'Back', days_path %>
