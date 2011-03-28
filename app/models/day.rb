@@ -1,5 +1,7 @@
 class Day < ActiveRecord::Base
   belongs_to :user
+  has_one :itinerary
+  has_many :activities, :through => :iteneraries
   has_many :ratings
   has_many :raters, :through => :ratings, :source => :users
   
