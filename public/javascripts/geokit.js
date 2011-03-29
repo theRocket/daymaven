@@ -43,10 +43,14 @@ $.fn.location_autocomplete = function(settings) {
             minLength: 2,
             autoFocus: true,
             select: function(event, ui) {
+								$("#day_latitude").val(ui.item.lat);
+								$("#day_longitude").val(ui.item.lng);
+
                 var point = new GLatLng(ui.item.lat, ui.item.lng);
                 map.addOverlay(new GMarker(point));
                 map.setCenter(new GLatLng(ui.item.lat, ui.item.lng), 12);
-
+                
+          
             },
 
             open: function(event, ui) {
