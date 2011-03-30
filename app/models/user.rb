@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_many :authentications
   has_many :days
+  has_many :comments
+  has_many :commented_days, :through => :comments, :source => :days
   has_many :ratings
   has_many :rated_days, :through => :ratings, :source => :days
   

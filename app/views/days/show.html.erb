@@ -7,28 +7,41 @@
 <% end %>
 
 
+<h2>Title:</h2>
 <p>
-  <b>Title:</b>
   <%= @day.title %>
 </p>
 
+<h2>Description:</h2>
 <p>
-  <b>Description:</b>
   <%= auto_link(@day.description) %>
 </p>
+
+<div class="comment">
+	<h2>Comments</h2>
+	<%= render :partial => "comments/comment",
+	           :collection => @day.comments %>
+
+<%- if current_user %>
+<h2>Add a comment:</h2>
+	<%= render "comments/form" %>
+<% end %>
+</div>
 
 <div class="rating">
 	Average Rating:&nbsp; <%= @day.average_rating %><br/>
 <br/>
-<%- if @day.user == current_user %>
-	<%= link_to 'Edit Your Day', edit_day_path(@day) %><br/>
-   <%= link_to 'Delete Your Day', @day, :confirm => 'Are you sure?', :method => :delete %>
+<%- if current_user %>
+	<%- if @day.user == current_user %>
+		<%= link_to 'Edit Your Day', edit_day_path(@day) %><br/>
+	   <%= link_to 'Delete Your Day', @day, :confirm => 'Are you sure?', :method => :delete %>
+	<% else %>
+		Your Rating:<br/>
+		<%= render 'rating' %>
+	<% end %>
 <% else %>
-Your Rating:<br/>
+ <p>You must <%= link_to('log in', new_user_session_path) %> to comment on and rate days.</p>
 
-<%- if current_user %>	
- <%= render 'rating' %>
-<% end %>
 <% end %>
 </div>
 <br/><br/>

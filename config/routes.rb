@@ -1,11 +1,14 @@
 Daymaven::Application.routes.draw do
 
   get "days/search"
-  resources :days
-  resources :ratings
-  resources :locations
+  resources :days do
+    resources :comments
+    resources :ratings
+  end
+  
+  resources :locations #not sure about this one right now. Used for mapping autosuggest?
+  
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-
   namespace :users do
     resources :authentications
   end

@@ -21,10 +21,10 @@
 <%- if devise_mapping.omniauthable? %>
 Sign in with:
 <ul class="hmenu">
-  <%- resource_class.omniauth_providers.each do |provider| %>
+  <!--  resource_class.omniauth_providers.each do |provider|  -->
 	  <li>
-    <%= link_to image_tag("/images/#{provider.to_s}_32.png"), omniauth_authorize_path(resource_name, provider) %>
+    <%= link_to image_tag("/images/facebook_32.png"), omniauth_authorize_path(resource_name, :facebook) %>
 	  </li>
-  <% end -%>
+  <!--  end  -->
 </ul>
 <% end -%>
