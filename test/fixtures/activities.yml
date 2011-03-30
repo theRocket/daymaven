@@ -1,13 +1,21 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  title: MyString
   description: MyText
-  lat: 9.99
-  lng: 9.99
+  day_of_week: MyString
+  date: 2011-03-30
+  time_start: 2011-03-30 13:17:56
+  time_end: 2011-03-30 13:17:56
+  sequence: 1
+  day: 
+  place: 
 
 two:
-  title: MyString
   description: MyText
-  lat: 9.99
-  lng: 9.99
+  day_of_week: MyString
+  date: 2011-03-30
+  time_start: 2011-03-30 13:17:56
+  time_end: 2011-03-30 13:17:56
+  sequence: 1
+  day: 
+  place: 

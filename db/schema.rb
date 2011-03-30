@@ -10,7 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110325191103) do
+ActiveRecord::Schema.define(:version => 20110330201756) do
+
+  create_table "activities", :force => true do |t|
+    t.text     "description"
+    t.string   "day_of_week"
+    t.date     "date"
+    t.time     "time_start"
+    t.time     "time_end"
+    t.integer  "sequence"
+    t.integer  "day_id"
+    t.integer  "place_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -25,12 +38,21 @@ ActiveRecord::Schema.define(:version => 20110325191103) do
   create_table "days", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.decimal  "latitude"
-    t.decimal  "longitude"
+    t.decimal  "latitude",    :precision => 10, :scale => 0
+    t.decimal  "longitude",   :precision => 10, :scale => 0
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "location"
+  end
+
+  create_table "places", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.decimal  "lat",         :precision => 15, :scale => 10
+    t.decimal  "lng",         :precision => 15, :scale => 10
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "ratings", :force => true do |t|

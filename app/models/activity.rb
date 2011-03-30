@@ -1,4 +1,5 @@
 class Activity < ActiveRecord::Base
-  has_many :itineraries
-  has_many :days, :through => :itineraries
+  belongs_to :day
+  belongs_to :place
+  
 end
