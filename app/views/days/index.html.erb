@@ -1,20 +1,29 @@
 <% @days.each do |day| %>
 
-<script type="text/javascript" charset="utf-8">
-  $(function()
-  {add_marker(<%=day.latitude%>, <%=day.longitude%>)});
-  </script>
+#the imbedded javascript needs moved when I figure out how to do it with parameters
+<% content_for(:scripts) do %>
+	<script type="text/javascript" charset="utf-8">
+		$(function()
+		{add_marker(<%=day.latitude%>, <%=day.longitude%>, '<%=escape_javascript(day.title)%>', '<%= days_path %>/<%= day.id %>')});
+	</script>
+<% end %>
 
- <div class="title">
+
+  <div class="title">
       <%= link_to day.title, day %>
   </div>
   <div class="description" >
     <%= auto_link(day.description) %>
     <%= day.created_at %>
 	</div>
-
 <% end %>
 
+<% content_for(:scripts) do %>
+	<script type="text/javascript" charset="utf-8">
+		$(function()
+		{center_and_bound_map()});
+	</script>
+<% end %>
 
 <br>
 

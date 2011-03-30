@@ -1,3 +1,13 @@
+#the imbedded javascript needs moved when I figure out how to do it with parameters
+<% content_for(:scripts) do %>
+	<script type="text/javascript" charset="utf-8">
+		$(function()
+		{add_marker(<%=@day.latitude%>, <%=@day.longitude%>, '<%=escape_javascript(@day.title)%>')
+		center_and_bound_map()});
+	</script>
+<% end %>
+
+
 <p>
   <b>Title:</b>
   <%= @day.title %>

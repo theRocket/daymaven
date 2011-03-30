@@ -1,4 +1,5 @@
 var map;
+var bounds;
 
 $(function () {
 	$('#city').search_location_autocomplete();
@@ -10,33 +11,51 @@ $(function () {
 	});
 
 $(function () {
+	var latlng = new google.maps.LatLng(57.8, 14.0);
+	
+	var options = {
+	  zoom: 6,
+	  center: latlng,
+	  mapTypeId: google.maps.MapTypeId.ROADMAP
+	}; 
+	
+	map = new google.maps.Map(document.getElementById('map'), options);
+		
+	bounds = new google.maps.LatLngBounds();
 
-    if (GBrowserIsCompatible())
-    {
-        map = new GMap2(document.getElementById("map"));
-        map.setCenter(new GLatLng(48.76152, -122.4978133), 13);
-        map.setUIToDefault();
-        map.enableGoogleBar();
-
-        var myEventListener = GEvent.bind(map, "click", this,
-        function(overlay, latlng)
-        {
-            if (latlng)
-            {
-                map.addOverlay(new GMarker(latlng));
-            }
-
+	google.maps.event.addListener(map, 'zoom_changed', function() {
+        zoomChangeBoundsListener = google.maps.event.addListener(map, 'bounds_changed', function(event) {
+            if (this.getZoom() > 12) // Change max/min zoom here
+                this.setZoom(12);
+               
+            google.maps.event.removeListener(zoomChangeBoundsListener);
         });
-
-
-    }
+	}); 
 });
 
-function add_marker(lat, lng)
+function add_marker(lat, lng, title, url)
 {
-	var point = new GLatLng(lat, lng);
-	map.addOverlay(new GMarker(point));
-	map.setCenter(new GLatLng(lat, lng), 12);
+	var latlng = new google.maps.LatLng(lat, lng);
+	var marker = new google.maps.Marker({
+        position: latlng, 
+        map: map,
+        title: title});
+		
+	var infowindow = new google.maps.InfoWindow({
+        content: "test content"
+    });
+	
+	google.maps.event.addListener(marker, 'click', function() {
+      location.href = url
+    });
+
+		
+	bounds.extend(latlng);
+};
+
+function center_and_bound_map()
+{
+	map.fitBounds(bounds);
 };
 
 $.fn.day_location_autocomplete = function(settings) {
@@ -51,7 +70,8 @@ $.fn.day_location_autocomplete = function(settings) {
 				$("#day_latitude").val(ui.item.lat);
 				$("#day_longitude").val(ui.item.lng);
 
-				add_marker(ui.item.lat, ui.item.lng);		          
+				add_marker(ui.item.lat, ui.item.lng, 'Location');
+				center_and_bound_map();				
             },
 
             open: function(event, ui) {
@@ -71,7 +91,8 @@ $.fn.search_location_autocomplete = function(settings) {
             minLength: 2,
             autoFocus: true,
             select: function(event, ui) {
-				add_marker(ui.item.lat, ui.item.lng);	
+				add_marker(ui.item.lat, ui.item.lng, ui.item.title);
+				center_and_bound_map()				
             },
 
             open: function(event, ui) {
