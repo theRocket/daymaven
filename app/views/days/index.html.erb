@@ -1,7 +1,13 @@
 <% @days.each do |day| %>
+
+<script type="text/javascript" charset="utf-8">
+  $(function()
+  {add_marker(<%=day.latitude%>, <%=day.longitude%>)});
+  </script>
+
  <div class="title">
       <%= link_to day.title, day %>
-   </div>
+  </div>
   <div class="description" >
     <%= auto_link(day.description) %>
     <%= day.created_at %>
