@@ -3,4 +3,5 @@ database.yml
 db/*.sqlite3
 log/*.log
 tmp/
+solr/
 .DS_Store
