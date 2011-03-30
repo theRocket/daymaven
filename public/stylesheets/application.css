@@ -23,20 +23,49 @@ div#container {
   background-image: -moz-linear-gradient(top, #cecece, #8a8a8a);
   background-image: -webkit-gradient(linear, left top, left bottom, from(#cecece), to(#8a8a8a));
 }
-#city {
-  float: left;
+
+
+#searchbar {
+  margin: 2px 1px 2px 4px;
+  display: inline;
   position: relative;
-  left: 180px;
-  top: -23px;
+  left: 220px;
+  top: -20px;
 }
 
+#searchbox{
+  float: left;
+  display: inline;
+  position: relative;
 
+}
+
+#citybox {
+  padding:0px 20px;
+  float: left;
+  position: relative;
+}
 #searchbutton {
+  padding:0px 5px;
   float: left;
   position: relative;
-  left: 195px;
-  top: -23px;
 }
+
+#searchtext {
+  width: 200px;
+  }
+
+
+
+li.UserManagement {
+display:block;
+padding:0 8px;
+float:right;
+position: relative;
+top: -80px;
+}
+
+
 div#content {
   float: left;
   margin: 10px 0px;
@@ -105,15 +134,7 @@ div#footer {
   -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
   -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
 }
-#searchbar {
-  margin: 2px 1px 2px 4px;
-  display: inline-block;
-  position: relative;
-  left: 20px;
-  top: 15px;
-  width: 285px;
-  height: 19px;
-}
+
 #newdayd {
   float: left;
   margin: 0px;
