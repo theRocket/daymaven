@@ -10,16 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110328065452) do
-
-  create_table "activities", :force => true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.decimal  "lat",         :precision => 15, :scale => 10
-    t.decimal  "lng",         :precision => 15, :scale => 10
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(:version => 20110325191103) do
 
   create_table "authentications", :force => true do |t|
     t.string   "provider"
@@ -40,18 +31,6 @@ ActiveRecord::Schema.define(:version => 20110328065452) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "location"
-  end
-
-  create_table "itineraries", :force => true do |t|
-    t.string   "day_of_week"
-    t.date     "date"
-    t.time     "time_start"
-    t.time     "time_end"
-    t.integer  "sequence"
-    t.integer  "day_id"
-    t.integer  "activity_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "ratings", :force => true do |t|
