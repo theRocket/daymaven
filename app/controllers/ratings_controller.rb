@@ -4,7 +4,7 @@ class RatingsController < ApplicationController
     def create
         @day = Day.find_by_id(params[:day_id])
         if current_user.id == @day.user_id
-            redirect_to day_path(@day), :alert => "You cannot rate for your own day"
+            redirect_to day_path(@day), :alert => "You cannot rate your own day"
         else
             @rating = Rating.new(params[:rating])
             @rating.day_id = @day.id

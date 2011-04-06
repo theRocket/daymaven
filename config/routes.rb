@@ -3,8 +3,8 @@ Daymaven::Application.routes.draw do
   get "days/search"
   resources :days do
     resources :comments
-    resources :ratings
   end
+  resources :ratings
   
   resources :locations #not sure about this one right now. Used for mapping autosuggest?
   

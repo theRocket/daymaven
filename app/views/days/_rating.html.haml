@@ -1,7 +1,7 @@
 - content_for(:scripts) do
     = javascript_include_tag 'rating_ballot'
 
-= form_for(@day, rating_ballot, :html => { :class => 'rating_ballot' }) do |f|
+= form_for(rating_ballot, :html => { :class => 'rating_ballot' }) do |f|
     = f.label("value_1", content_tag(:span, '1'), {:class=>"rating", :id=>"1"})
     = radio_button_tag("rating[value]", 1, current_user_rating == 1, :class => 'rating_button')
     = f.label("value_2", content_tag(:span, '2'), {:class=>"rating", :id=>"2"})
