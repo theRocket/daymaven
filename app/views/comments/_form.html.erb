@@ -1,6 +1,5 @@
 <%= form_for([@day, @day.comments.build]) do |f| %>
   <div class="field">
-    <%= f.label :body %><br />
     <%= f.text_area :body %>
   </div>
   <div class="actions">
