@@ -8,12 +8,17 @@
 <% end %>
 
 
-  <div class="title">
+  <h3 class="title">
       <%= link_to day.title, day %>
-  </div>
+<h4>
+	created by <%= day.user.name rescue 'unknown user' %>
+	    Average Rating:&nbsp; <%= day.average_rating %>/5<br/>
+	</h4>
+   </h3>
+
+  
   <div class="description" >
     <%= auto_link(day.description) %>
-    <%= day.created_at %>
 	</div>
 <% end %>
 

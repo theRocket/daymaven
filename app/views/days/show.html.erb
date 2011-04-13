@@ -7,12 +7,13 @@
 <% end %>
 
 
-<h2>Title:</h2>
-<p>
-  <%= @day.title %>
-</p>
+<h2><%= @day.title %></h2>
+<h4>created by <%= @day.user.name %>
+<div class="rating">
+	Average Rating:&nbsp; <%= @day.average_rating %>/5<br/>
+</div>
+</h4>
 
-<h2>Description:</h2>
 <p>
   <%= auto_link(@day.description) %>
 </p>
@@ -23,13 +24,11 @@
 	           :collection => @day.comments %>
 
 <%- if current_user %>
-<h2>Add a comment:</h2>
 	<%= render "comments/form" %>
 <% end %>
 </div>
 
-<div class="rating">
-	Average Rating:&nbsp; <%= @day.average_rating %><br/>
+
 <br/>
 <%- if current_user %>
 	<%- if @day.user == current_user %>

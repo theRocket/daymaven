@@ -24,4 +24,15 @@
   <%= link_to('Login', new_user_session_path)  %>  
   </li>
 <% end %>
+
+<% if user_signed_in? %>
+<% else %>
+  <li class='UserManagement' id='Login'>
+ <a id= 'fb_bar_login' href="/users/auth/facebook">
+			<img src="/images/facebook_32.png?1300740827" alt="Facebook_32"> </a>
+
+  </li>
+<% end %>
+
+		
 </ul>

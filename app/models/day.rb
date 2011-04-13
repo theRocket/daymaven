@@ -25,9 +25,9 @@ class Day < ActiveRecord::Base
   
    def self.search(search, city)
     if search
-	 find(:all, :conditions => build_search_query(search, city))
+		find(:all, :conditions => build_search_query(search, city))
     else
-      find(:all)
+		find(:all)
     end
   end
   

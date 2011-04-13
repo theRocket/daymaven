@@ -46,8 +46,8 @@ ActiveRecord::Schema.define(:version => 20110330205147) do
   create_table "days", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.decimal  "latitude",    :precision => 10, :scale => 0
-    t.decimal  "longitude",   :precision => 10, :scale => 0
+    t.decimal  "latitude"
+    t.decimal  "longitude"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
