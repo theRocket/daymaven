@@ -8,11 +8,11 @@
 
 
 <h2><%= @day.title %></h2>
-<h4>created by <%= @day.user.name %>
+<h5>created by <%= @day.user.name %>
 <div class="rating">
 	Average Rating:&nbsp; <%= @day.average_rating %>/5<br/>
 </div>
-</h4>
+</h5>
 
 <p>
   <%= auto_link(@day.description) %>
@@ -42,7 +42,7 @@
  <p>You must <%= link_to('log in', new_user_session_path) %> to comment on and rate days.</p>
 
 <% end %>
-</div>
+
 <br/><br/>
 <%= link_to 'Back', days_path %>
 

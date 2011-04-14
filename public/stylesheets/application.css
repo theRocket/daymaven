@@ -1,12 +1,28 @@
  /* some gradients to play with 
  background-image: -moz-linear-gradient(center top , #666666, #333333);
  background-image: -moz-linear-gradient(top, #A7DBD8, #69D2E7);
- background-image: -moz-linear-gradient(center bottom , #EAF4F8 0%, #A4D2E1 100%);  */
+ background-image: -moz-linear-gradient(center bottom , #EAF4F8 0%, #A4D2E1 100%);  
+ 
+ Hulu green
+  background-image: -moz-linear-gradient(top, #a5cd39, #69b245);
+  
+  Our Orange
+   background-image: -moz-linear-gradient(top, #F38630, #FA6900);
+ 
+  
+  Sharezen Orange
+  background-image: -moz-linear-gradient(top, #F9A21A, #D67711);
+  ShareZen Blue
+  background-image: -moz-linear-gradient(center bottom , #EAF4F8 0%, #A4D2E1 100%);
+
+  
+ */
 
 
 BODY {
-    background-image: -moz-linear-gradient(center top , #CCCCCC, #CCCCCC);
- 	background-image: -webkit-gradient(linear, left top, left bottom, from(#cecece), to(#8a8a8a));
+    background-color: #5E5E5E;
+    color: #222222;
+ 	#background-image: -webkit-gradient(linear, left top, left bottom, from(#cecece), to(#8a8a8a));
   
 	font-family: 'Arial','Helvetica',sans-serif;
     margin: 0;
@@ -38,8 +54,9 @@ div#container {
 	padding: 0px; 0px;
 	clear: both;
 
-	background-image: -moz-linear-gradient(center bottom , #EAF4F8 0%, #A4D2E1 100%);
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#cecece), to(#8a8a8a));
+	 background-color: #5E5E5E;
+	#background-image: -moz-linear-gradient(top, #a5cd39, #69b245);
+	#background-image: -webkit-gradient(linear, left top, left bottom, from(#cecece), to(#8a8a8a));
 }
 
 div#header {
@@ -47,12 +64,14 @@ div#header {
 	padding: 2px 10px 0px;
 	overflow: hidden;
   
-	background-image: -moz-linear-gradient(top, #F9A21A, #D67711);
+	background-image: -moz-linear-gradient(top, #a5cd39, #69b245);
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#F9A21A), to(#D67711));
  
 	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
 	-webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
-	-moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
+	-moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 5.45);
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 }
 
 #logo {
@@ -151,6 +170,9 @@ div#content {
   background-color: #ffffff;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
+  
+  -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 5.45);
+
 }
 
 div#map {
@@ -175,11 +197,15 @@ div#footer {
   line-height: 20px;
   padding: 6px 10px 0px;
   overflow: hidden;
-  background-image: -moz-linear-gradient(top, #F38630, #FA6900);
+   background-image: -moz-linear-gradient(top, #a5cd39, #69b245);
+ 
   background-image: -webkit-gradient(linear, left top, left bottom, from(#54f73f), to(#37f61e));
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
   -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
   -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
+  
+  -moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 }
 
 

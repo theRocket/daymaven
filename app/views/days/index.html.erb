@@ -1,3 +1,5 @@
+<%= paginate @days %>
+
 <% @days.each do |day| %>
 
 <% content_for(:scripts) do %>
@@ -10,15 +12,15 @@
 
   <h3 class="title">
       <%= link_to day.title, day %>
-<h4>
+<h5>
 	created by <%= day.user.name rescue 'unknown user' %>
 	    Average Rating:&nbsp; <%= day.average_rating %>/5<br/>
-	</h4>
+</h5>
    </h3>
 
   
   <div class="description" >
-    <%= auto_link(day.description) %>
+    <%= auto_link(day.description[0,300]) %>...
 	</div>
 <% end %>
 
