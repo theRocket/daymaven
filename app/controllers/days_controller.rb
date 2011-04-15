@@ -58,10 +58,10 @@ class DaysController < ApplicationController
 		  
 		  if (params[:post_to_fb] == '1')
 			@user.facebook.feed!(
-			:message => 'test',
-			 :link => 'http://daymaven.com',
+			:message => @day.user.name + ' has posted a new day to Daymaven',
+			 :link => url_for(@day),
 			:name => 'daymaven',
-			:description => 'This is only a test')
+			:description => @day.title)
 		  end
 	  
           format.xml  { render :xml => @day, :status => :created, :location => @day }
