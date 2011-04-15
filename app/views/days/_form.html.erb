@@ -33,6 +33,13 @@
     <%= f.label :description %><br />
     <%= f.text_area :description, :cols => 60, :rows => 10 %>
   </div>
+  
+  <div class="checkbox">
+    <%= check_box_tag "post_to_fb", 1, true %> 
+	<%= f.label 'Post a link to my new day on my Facebook Wall' %><br />	 
+  </div>
+  
+  
   <div class="actions">
     <%= f.submit %>
   </div>

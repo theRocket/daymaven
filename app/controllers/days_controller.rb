@@ -36,6 +36,7 @@ class DaysController < ApplicationController
         format.html # new.html.erb
         format.xml  { render :xml => @day }
       end
+	 
     end
 
     # GET /days/1/edit
@@ -54,6 +55,15 @@ class DaysController < ApplicationController
       respond_to do |format|
         if @day.save
           format.html { redirect_to(@day, :notice => 'Day was successfully created.') }
+		  
+		  if (params[:post_to_fb] == '1')
+			@user.facebook.feed!(
+			:message => 'test',
+			 :link => 'http://daymaven.com',
+			:name => 'daymaven',
+			:description => 'This is only a test')
+		  end
+	  
           format.xml  { render :xml => @day, :status => :created, :location => @day }
         else
           format.html { render :action => "new" }

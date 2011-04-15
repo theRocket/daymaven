@@ -1,5 +1,8 @@
 <%= paginate @days %>
 
+<% if @days.count < 1 %>
+  We couldn't find any days for your search criteria and city.  Want to add one?
+<% end %>
 <% @days.each do |day| %>
 
 <% content_for(:scripts) do %>
@@ -10,18 +13,21 @@
 <% end %>
 
 
-  <h3 class="title">
+  <h4 class="title">
       <%= link_to day.title, day %>
+</h4>
 <h5>
 	created by <%= day.user.name rescue 'unknown user' %>
 	    Average Rating:&nbsp; <%= day.average_rating %>/5<br/>
 </h5>
-   </h3>
+   
+  
 
   
   <div class="description" >
     <%= auto_link(day.description[0,300]) %>...
 	</div>
+	 </br>
 <% end %>
 
 <% content_for(:scripts) do %>

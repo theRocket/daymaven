@@ -11,7 +11,7 @@ $(function () {
 	});
 
 $(function () {
-	var latlng = new google.maps.LatLng(57.8, 14.0);
+	var latlng = new google.maps.LatLng(48.7, -122.4);
 	
 	var options = {
 	  zoom: 6,

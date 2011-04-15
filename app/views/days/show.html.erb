@@ -7,8 +7,8 @@
 <% end %>
 
 
-<h2><%= @day.title %></h2>
-<h5>created by <%= @day.user.name %>
+<h3><%= @day.title %></h3>
+<h5>created by <%= @day.user.name rescue 'unknown user'%>
 <div class="rating">
 	Average Rating:&nbsp; <%= @day.average_rating %>/5<br/>
 </div>

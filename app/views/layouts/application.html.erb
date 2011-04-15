@@ -26,18 +26,22 @@
 <div id = "container">
 	<div id="header">
 	
-			<img id = "logo" src="/images/dayjason2.png">
+			<%= link_to image_tag("/images/daymaven415.png", :border =>0, :id => 'logo'), days_path %>
+ 
 	
 			
 		<div id="searchbar">	
 			<%= form_tag days_path, :method => 'get' do %>
-			<%= label_tag :searchtext, "Search" %> 
-			<%= text_field_tag :search, params[:search], :id=>"searchtext" %>
-
-			<%= label_tag :city, "City" %>
+			
+			<%= label_tag :city, "Filter by City" %>
 			<%= text_field_tag :city, params[:city], :id=>"city" %>
 			
-			<%= submit_tag "GO", :id=>"searchgo" %>
+			<%= label_tag :searchtext, "  Keywords" %> 
+			<%= text_field_tag :search, params[:search], :id=>"searchtext" %>
+
+			
+			
+			<%= submit_tag "Search", :id=>"searchgo" %>
 			<% end %>
 		</div>
   
