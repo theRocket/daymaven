@@ -5,6 +5,7 @@
 <% end %>
 <ul class="hmenu">
 
+<% if false %>
 <% if user_signed_in? %>
   <li class='UserManagement' id='MyAccount'>
   <%= link_to('My Account', edit_user_registration_path) %>
@@ -25,7 +26,12 @@
   </li>
 <% end %>
 
+<% end %>
+
 <% if user_signed_in? %>
+  <li class='UserManagement' id='Logout'>
+  <%= link_to('Logout', destroy_user_session_path) %>        
+  </li>
 <% else %>
   <li class='UserManagement' id='Login'>
 

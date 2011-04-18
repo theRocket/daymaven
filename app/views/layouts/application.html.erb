@@ -6,6 +6,7 @@
 	<%= stylesheet_link_tag "application" %>
 	<%= javascript_include_tag :gmaps, "geokit" %>
 	<%= yield :scripts %>
+	<%= yield :head %>
 	<%= csrf_meta_tag %>
 </head>
 
@@ -14,8 +15,8 @@
 <div id = "loginbar">
 	<div id="smalltabs">
 		<ul>
-			<li><%= link_to 'Home', days_path %></li>
-			<li><%= link_to 'New Day', new_day_path %></li>
+			<li><%= link_to 'Add a Day', new_day_path %></li>
+			<li><%= link_to 'Add a Spot', new_day_path %></li>
 		</ul>
 	</div>
 		
@@ -54,11 +55,28 @@
 			<%= yield %>	
 		</div>
 
-		<div id="map"> </div>
-
-		<div id="footer">
-			<iframe src="http://www.facebook.com/plugins/like.php?href=www.daymaven.com" scrolling="no" frameborder="0" style="border:none; width:450px; height:80px"></iframe>
+		<div id="map"> 
 		</div>
+
+		<div id="footerwrapper">
+			<div id = "footerleft" class = "footer">
+				<ul id = "footerlinkleft" class = "footerlinks">	
+				<li><a href ="Test" >Home</a></li>
+				<li>About</li>
+				<li><a href="mailto: feedback@daymaven.com">Contact Us</a></li>
+			</ul>	
+			<ul id = "footerlinkright" class = "footerlinks">
+				<li>Privacy Policy</li>
+				<li>Terms of Service</li>
+			</ul>
+		
+			</div>
+			<div id = "footermiddle" class = "footer">
+			   <iframe src="http://www.facebook.com/plugins/like.php?href=www.daymaven.com" scrolling="no" frameborder="0" style="border:none; width:450px; height:80px"></iframe>
+			</div>	
+			<div id = "footerright" class = "footer">
+			</div>
+	    </div>
 	</div>
 </div>
 </body>

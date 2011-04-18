@@ -84,7 +84,7 @@ $.fn.day_location_autocomplete = function(settings) {
 
 $.fn.search_location_autocomplete = function(settings) {
     return this.each(function() {
-        console.log($(this));
+       
         $(this).autocomplete({
             source: "/locations/",
             delay: 500,
