@@ -1,7 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 # use syck instead of psych (Win) because of issues with merging syntax, i.e. <<: *common
-YAML::ENGINE.yamler = 'syck'
+#YAML::ENGINE.yamler = 'syck'
 
 require 'rails/all'
 
