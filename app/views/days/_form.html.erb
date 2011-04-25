@@ -13,10 +13,13 @@
     </div>
   <% end %>
 
-   
+   <% desc_rows = 8 %>
+   <% if params[:type] == '2' %>
+	  <% desc_rows = 2 %>
+   <% end %>
 		
    <div class="field">
-    <%= f.label :location %><br />
+    <%= f.label :City %><br />
     <%= f.text_field :location, :size => 50 %>
   </div>
    <div class="field">
@@ -31,13 +34,14 @@
   </div>
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_area :description, :cols => 60, :rows => 10 %>
+    <%= f.text_area :description, :cols => 60, :rows => desc_rows %>
   </div>
   
   <div class="checkbox">
     <%= check_box_tag "post_to_fb", 1, true %> 
 	<%= f.label 'Post a link to my new day on my Facebook Wall' %><br />	 
   </div>
+  </br>
   
   
   <div class="actions">

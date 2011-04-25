@@ -63,7 +63,7 @@ $.fn.day_location_autocomplete = function(settings) {
         console.log($(this));
         $(this).autocomplete({
             source: "/locations/",
-            delay: 500,
+            delay: 300,
             minLength: 2,
             autoFocus: true,
             select: function(event, ui) {		
@@ -84,10 +84,10 @@ $.fn.day_location_autocomplete = function(settings) {
 
 $.fn.search_location_autocomplete = function(settings) {
     return this.each(function() {
-        console.log($(this));
+       
         $(this).autocomplete({
             source: "/locations/",
-            delay: 500,
+            delay: 300,
             minLength: 2,
             autoFocus: true,
             select: function(event, ui) {

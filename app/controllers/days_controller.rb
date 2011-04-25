@@ -60,8 +60,8 @@ class DaysController < ApplicationController
 			@user.facebook.feed!(
 			:message => @day.user.name + ' has posted a new day to Daymaven',
 			 :link => url_for(@day),
-			:name => 'daymaven',
-			:description => @day.title)
+			:name => @day.title,
+			:description => @day.description[0, 80] + '...')
 		  end
 	  
           format.xml  { render :xml => @day, :status => :created, :location => @day }
@@ -102,9 +102,9 @@ class DaysController < ApplicationController
 	
 	def search(search, city, pagenum)
     if search
-		Day.where(build_search_query(search, city)).page(pagenum).per(4)
+		Day.where(build_search_query(search, city)).page(pagenum).per(5)
     else
-		Day.order('title').page(pagenum).per(4)
+		Day.order('title').page(pagenum).per(5)
     end
   end
   

@@ -5,27 +5,32 @@
 <% end %>
 <ul class="hmenu">
 
-<% if user_signed_in? %>
-  <li class='UserManagement' id='MyAccount'>
-  <%= link_to('My Account', edit_user_registration_path) %>
-  </li>
-<% else %>
-  <li class='UserManagement' id='SignUp'>
-  <%= link_to('Sign up', new_user_registration_path)  %>
-  </li>
+<% if false %>
+	<% if user_signed_in? %>
+	  <li class='UserManagement' id='MyAccount'>
+	  <%= link_to('My Account', edit_user_registration_path) %>
+	  </li>
+	<% else %>
+	  <li class='UserManagement' id='SignUp'>
+	  <%= link_to('Sign up', new_user_registration_path)  %>
+	  </li>
+	<% end %>
+
+	<% if user_signed_in? %>
+	  <li class='UserManagement' id='Logout'>
+	  <%= link_to('Logout', destroy_user_session_path) %>        
+	  </li>
+	<% else %>
+	  <li class='UserManagement' id='Login'>
+	  <%= link_to('Login', new_user_session_path)  %>  
+	  </li>
+	<% end %>
 <% end %>
 
 <% if user_signed_in? %>
   <li class='UserManagement' id='Logout'>
   <%= link_to('Logout', destroy_user_session_path) %>        
   </li>
-<% else %>
-  <li class='UserManagement' id='Login'>
-  <%= link_to('Login', new_user_session_path)  %>  
-  </li>
-<% end %>
-
-<% if user_signed_in? %>
 <% else %>
   <li class='UserManagement' id='Login'>
 

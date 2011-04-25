@@ -29,7 +29,7 @@ BODY {
 }
 
 
-H3, H4 { color: #FA6900; margin: 5px 0px; }
+H3, H4 { color: #FA6900; margin: 5px 0px;}
 
 H3, H4 a { color: #FA6900;}
 
@@ -93,8 +93,31 @@ div#header {
 	float: left;
 }
 
-#smalltabs li{list-style-type:none;display:inline; }
-#smalltabs a{float:left;height:1px;padding:0 7px;line-height:1px;color:#ffffff;text-decoration:none;  font-family: 'PT sans', arial, serif;}
+#smalltabs li{
+	list-style-type:none;
+	display:inline;
+	
+
+ }
+#smalltabs a{
+	background: -moz-linear-gradient(center top , rgba(255, 255, 255, 0.5) 1px, rgba(255, 255, 255, 0) 2px) repeat scroll 0 0%, -moz-linear-gradient(center top , #F9A21A, #D67711) repeat scroll 0 0 transparent;
+	background: -webkit-gradient(linear, left top, left bottom, from(#F9A21A), to(#D67711));
+	background-color: #F9A21A;
+   
+    border: 1px solid #D67711;
+    color: #2B2B2B;
+
+	
+    text-shadow: 0 -1px 0 #F9A21A;
+	margin: 0px 0px;
+    padding: 2px 8px;
+	top: -5px;
+	position: relative;
+	text-decoration: none;
+	}
+
+
+#float:left;height:1px;padding:0 7px;line-height:1px;color:#ffffff;text-decoration:none;  font-family: 'PT sans', arial, serif;}
 #smalltabs a:hover {  color: #ff8a16;}
 
 #searchbar {
@@ -111,6 +134,7 @@ div#header {
 input[type=submit]{
 	background: -moz-linear-gradient(center top , rgba(255, 255, 255, 0.5) 1px, rgba(255, 255, 255, 0) 2px) repeat scroll 0 0%, -moz-linear-gradient(center top , #F9A21A, #D67711) repeat scroll 0 0 transparent;
     background: -webkit-gradient(linear, left top, left bottom, from(#F9A21A), to(#D67711));
+	 background-color: #F9A21A;
 	border: 1px solid #D67711;
     color: #2B2B2B;
 	
@@ -169,8 +193,8 @@ div#content {
   margin: 10px 0px;
   padding-left: 10px;
   width: 620px;
-  height: 600px;
-  overflow: auto;
+  min-height: 500px;
+  overflow: visible;
   background-color: #ffffff;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -193,12 +217,31 @@ div#map {
 
 
 
-div#footer {
+#footerwrapper {
   clear: both;
+  margin: 20px 0px;
+  }
+  
+.footerlinks 
+{
+   float: left;
+    list-style: none outside none;
+    margin: 10px 10px;
+    padding: 0;
+    width: 100px;
+	font-size: 13px;
+	 color: #666666;
+}
+
+
+
+  
+div.footer {
+
+
+display: inline;
   text-align: center;
   height: 65px;
-  margin: 0;
-  line-height: 20px;
   padding: 6px 10px 0px;
   overflow: hidden;
   background-image: -moz-linear-gradient(top, #a5cd39, #69b245);
@@ -213,8 +256,30 @@ div#footer {
   -webkit-border-radius: 5px;
 }
 
+#footerleft{
+  width: 245px;
+  float: left;
+  margin-right: 5px;
 
+  }
+  
+#footermiddle {
+	width: 400px;
+	float: left;
+	
+}
 
+#footerright {
+  width: 245px;
+  float: right;
+  
+}
+
+.star 
+{
+  width: 15px;
+  display: inline;
+}
 
 /* Autocompleter */
 ul.ui-autocomplete {

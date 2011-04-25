@@ -1,14 +1,14 @@
-<%= paginate @days %>
 
-<% if @days.count < 1 %>
+
+<% if @days.length < 1 %>
   We couldn't find any days for your search criteria and city.  Want to add one?
 <% end %>
 <% @days.each do |day| %>
 
 <% content_for(:scripts) do %>
 	<script type="text/javascript" charset="utf-8">
-		$(function()
-		{add_marker(<%=day.latitude%>, <%=day.longitude%>, '<%=escape_javascript(day.title)%>', '<%= days_path %>/<%= day.id %>')});
+		$(function() {
+		add_marker(<%=day.latitude%>, <%=day.longitude%>, '<%=escape_javascript(day.title)%>', '<%= days_path %>/<%= day.id %>')});
 	</script>
 <% end %>
 
@@ -18,7 +18,7 @@
 </h4>
 <h5>
 	created by <%= day.user.name rescue 'unknown user' %>
-	    Average Rating:&nbsp; <%= day.average_rating %>/5<br/>
+	    &nbsp&nbspRating:&nbsp; <%= render 'average_rating', :day => day%><br/>
 </h5>
    
   
@@ -39,4 +39,4 @@
 
 <br>
 
-<%= link_to 'New Day', new_day_path %>
+<%= paginate @days %>

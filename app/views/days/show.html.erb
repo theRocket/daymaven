@@ -6,17 +6,41 @@
 	</script>
 <% end %>
 
+<% content_for(:head) do %>
+<meta property="og:title" content= "<%=escape_javascript(@day.title)%>"/> 
+<meta property="og:type" content= "article" /> 
+<meta property="og:site_name" content= "daymaven.com"/> 
+<meta property="og:image" content = "images/daymaven415.png" />
+<meta property="og:url" content = "<%=url_for(@day)%>"/>
+<meta property="fb:admins" content = "1067603571" />
+
+
+<% end %>
+
 
 <h3><%= @day.title %></h3>
+<%= render 'average_rating', :day => @day %>
+<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="" show_faces="false" width="250" font=""></fb:like>
+	
 <h5>created by <%= @day.user.name rescue 'unknown user'%>
-<div class="rating">
-	Average Rating:&nbsp; <%= @day.average_rating %>/5<br/>
-</div>
+	
+	
+
+
+</br>
+
+</br>
+
 </h5>
 
 <p>
-  <%= auto_link(@day.description) %>
+  <%= auto_link(@day.description.gsub(/\n/, '<br/>')) %>
 </p>
+
+<% if current_user && current_user != @day.user %>
+		Your Rating:
+		<%= render 'rating' %><br/>
+<% end %>
 
 <div class="comment">
 	<h2>Comments</h2>
@@ -34,9 +58,6 @@
 	<%- if @day.user == current_user %>
 		<%= link_to 'Edit Your Day', edit_day_path(@day) %><br/>
 	   <%= link_to 'Delete Your Day', @day, :confirm => 'Are you sure?', :method => :delete %>
-	<% else %>
-		Your Rating:<br/>
-		<%= render 'rating' %>
 	<% end %>
 <% else %>
  <p>You must <%= link_to('log in', new_user_session_path) %> to comment on and rate days.</p>
@@ -44,7 +65,7 @@
 <% end %>
 
 <br/><br/>
-<%= link_to 'Back', days_path %>
+<% #= link_to 'Back', days_path %>
 
 
 
