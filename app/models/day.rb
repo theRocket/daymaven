@@ -10,7 +10,7 @@ class Day < ActiveRecord::Base
   validates :title,  :presence => true,
                       :length => { :minimum => 5 }
   validates :description, :presence => true,
-                      :length => { :minimum => 50 }
+                      :length => { :minimum => 20 }
 
   def average_rating
       @value = 0
@@ -19,7 +19,7 @@ class Day < ActiveRecord::Base
       end
       @total = self.ratings.size
       @avg_value = @value.to_f / @total.to_f
-      @avg_value.nan? ? "N/A" : @avg_value
+      @avg_value.nan? ? -1 : @avg_value
   end
   
   

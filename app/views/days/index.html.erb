@@ -1,6 +1,6 @@
 
 
-<% if @days.count < 1 %>
+<% if @days.length < 1 %>
   We couldn't find any days for your search criteria and city.  Want to add one?
 <% end %>
 <% @days.each do |day| %>
@@ -18,7 +18,7 @@
 </h4>
 <h5>
 	created by <%= day.user.name rescue 'unknown user' %>
-	    Average Rating:&nbsp; <%= day.average_rating %>/5<br/>
+	    &nbsp&nbspRating:&nbsp; <%= render 'average_rating', :day => day%><br/>
 </h5>
    
   

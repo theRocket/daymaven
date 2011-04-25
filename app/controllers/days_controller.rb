@@ -102,9 +102,9 @@ class DaysController < ApplicationController
 	
 	def search(search, city, pagenum)
     if search
-		Day.where(build_search_query(search, city)).page(pagenum).per(4)
+		Day.where(build_search_query(search, city)).page(pagenum).per(5)
     else
-		Day.order('title').page(pagenum).per(4)
+		Day.order('title').page(pagenum).per(5)
     end
   end
   

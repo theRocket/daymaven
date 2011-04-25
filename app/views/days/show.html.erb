@@ -7,7 +7,7 @@
 <% end %>
 
 <% content_for(:head) do %>
-<meta property="og:title" content= <% @day.title %>/> 
+<meta property="og:title" content= <% escape_javascript(@day.title) %>/> 
 <meta property="og:type" content= "article" /> 
 <meta property="og:site_name" content= "daymaven.com"/> 
 
@@ -15,26 +15,28 @@
 
 
 <h3><%= @day.title %></h3>
-
-<h5>created by <%= @day.user.name rescue 'unknown user'%>
-
-	Rating:&nbsp; <%= @day.average_rating %>/5
-
-
+<%= render 'average_rating', :day => @day %>
 <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="" show_faces="false" width="250" font=""></fb:like>
+	
+<h5>created by <%= @day.user.name rescue 'unknown user'%>
+	
+	
+
 
 </br>
-<% if current_user && current_user != @day.user %>
-		Your Rating:
-		<%= render 'rating' %><br/>
-<% end %>
+
 </br>
 
 </h5>
 
 <p>
-  <%= auto_link(@day.description) %>
+  <%= auto_link(@day.description.gsub(/\n/, '<br/>')) %>
 </p>
+
+<% if current_user && current_user != @day.user %>
+		Your Rating:
+		<%= render 'rating' %><br/>
+<% end %>
 
 <div class="comment">
 	<h2>Comments</h2>

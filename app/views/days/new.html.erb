@@ -1,4 +1,9 @@
-<h1>New day</h1>
+
+<% if params[:type] == '2' %>
+<h2>New Spot</h2>
+<% else %>
+<h2>New day</h2>
+<% end %>
 
 <%= render 'form' %>
 
