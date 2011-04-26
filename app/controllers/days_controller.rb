@@ -31,6 +31,7 @@ class DaysController < ApplicationController
 
        @user = User.find(current_user);
   	    @day.user_id = @user.id
+		@day.average_rating = 3
 
       respond_to do |format|
         format.html # new.html.erb
