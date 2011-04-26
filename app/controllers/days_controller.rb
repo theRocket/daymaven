@@ -61,7 +61,7 @@ class DaysController < ApplicationController
 			@user.facebook.feed!(
 			:message => @day.user.name + ' has posted a new day to Daymaven',
 			 :link => url_for(@day),
-			 :picture => 'daymaven.heroku.com/images/daymavensmall.gif',
+			 :picture => 'www.daymaven.com/images/daymavensmall.gif',
 			:name => @day.title,
 			:description => @day.description[0, 80] + '...')
 		  end

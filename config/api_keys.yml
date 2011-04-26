@@ -18,7 +18,7 @@ development:
     
 production:
     <<: *common
-    url: daymaven.heroku.com
+    url: daymaven.com
     facebook:
       app_id: 134438253292800
       api_key: c788e30bc887f0fe46ad0999adb14785
