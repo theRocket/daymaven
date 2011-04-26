@@ -15,10 +15,20 @@ development:
   google_map:
     api_key: ABQIAAAA60g1pdPgnY4z9NWm6WKWvxTJQa0g3IQ9GZqIMmInSLzwtGDKaBRlJ7nBXrhFjuS0u45axCVeudJzkQ
   
-    
+ 
 production:
     <<: *common
     url: daymaven.com
+    facebook:
+      app_id: 181345015244308
+      api_key: e75559e90eb76c66b1c6063e6be0fbb4
+      secret_key: a95bf205efb1497f9adc3f43b57de9a5
+    google_map:
+      api_key: ABQIAAAA60g1pdPgnY4z9NWm6WKWvxS6t6xUe4psMnYpX9IOWZcUvhwzbxSRxh_JsH_26TdCndQBgLYbcQ7knQ
+	  
+productionheroku:
+    <<: *common
+    url: daymaven.heroku.com
     facebook:
       app_id: 134438253292800
       api_key: c788e30bc887f0fe46ad0999adb14785
