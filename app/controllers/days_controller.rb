@@ -60,6 +60,7 @@ class DaysController < ApplicationController
 			@user.facebook.feed!(
 			:message => @day.user.name + ' has posted a new day to Daymaven',
 			 :link => url_for(@day),
+			 :picture => 'daymaven.heroku.com/images/daymavensmall.gif',
 			:name => @day.title,
 			:description => @day.description[0, 80] + '...')
 		  end
@@ -102,9 +103,9 @@ class DaysController < ApplicationController
 	
 	def search(search, city, pagenum)
     if search
-		Day.where(build_search_query(search, city)).page(pagenum).per(5)
+		Day.where(build_search_query(search, city)).order('average_rating DESC').page(pagenum).per(50)
     else
-		Day.order('title').page(pagenum).per(5)
+		Day.order('average_rating DESC').page(pagenum).per(50)
     end
   end
   
@@ -121,8 +122,8 @@ class DaysController < ApplicationController
 		k = ""
 	end
 	
-    array.each do |value|
-      k << "description LIKE '%%#{value}%%'"
+    array.each do |value| 
+      k << "UPPER(description) LIKE UPPER('%%#{value}%%')"
       if key_count > 1 
         k += " or "
       end
@@ -134,9 +135,9 @@ class DaysController < ApplicationController
       k += ") AND "
 	end
 	
-	k += "location LIKE '%%#{city}%%'"
+	k += "UPPER(location) LIKE UPPER('%%#{city}%%')"
     like_conditions << k
-
+	
 	puts like_conditions
 	like_conditions
   end

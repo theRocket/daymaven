@@ -12,14 +12,19 @@ class Day < ActiveRecord::Base
   validates :description, :presence => true,
                       :length => { :minimum => 20 }
 
-  def average_rating
+  def determine_average_rating
       @value = 0
       self.ratings.each do |rating|
           @value = @value + rating.value
       end
       @total = self.ratings.size
       @avg_value = @value.to_f / @total.to_f
-      @avg_value.nan? ? -1 : @avg_value
+	  if (not @avg_value.nan?)
+		self.average_rating = @avg_value
+	  else
+		self.average_rating = 3
+	  end
+     self.save
   end
   
   

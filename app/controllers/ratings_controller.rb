@@ -10,6 +10,7 @@ class RatingsController < ApplicationController
             @rating.day_id = @day.id
             @rating.user_id = current_user.id
             if @rating.save
+				@day.determine_average_rating
                 respond_to do |format|
                     format.html { redirect_to day_path(@day), :notice => "Your rating has been saved" }
                     format.js
@@ -25,6 +26,7 @@ class RatingsController < ApplicationController
         else
             @rating = current_user.ratings.find_by_day_id(@day.id)
             if @rating.update_attributes(params[:rating])
+				@day.determine_average_rating
                 respond_to do |format|
                     format.html { redirect_to day_path(@day), :notice => "Your rating has been updated" }
                     format.js
