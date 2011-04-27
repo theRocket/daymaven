@@ -8,6 +8,9 @@ Daymaven::Application.routes.draw do
   
   resources :locations #not sure about this one right now. Used for mapping autosuggest?
   
+
+  match "pages/:action", :controller => :pages
+  
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   namespace :users do
     resources :authentications

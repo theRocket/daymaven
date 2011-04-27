@@ -7,7 +7,7 @@
 <% end %>
 
 <% content_for(:head) do %>
-<meta property="og:title" content= "<%=escape_javascript(@day.title)%>"/> 
+<meta property="og:title" content= "<%= @day.title %>"/> 
 <meta property="og:type" content= "article" /> 
 <meta property="og:site_name" content= "daymaven.com"/> 
 <meta property="og:image" content = "http://www.daymaven.com/images/daymavensmall.gif" />

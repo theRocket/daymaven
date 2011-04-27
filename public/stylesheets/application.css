@@ -192,9 +192,11 @@ div#content {
   float: left;
   margin: 10px 0px;
   padding-left: 10px;
+  padding-right: 10px;
+
   width: 620px;
   min-height: 500px;
-  overflow: visible;
+  overflow: hidden;
   background-color: #ffffff;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -205,7 +207,7 @@ div#content {
 
 div#map {
   float: right;
-  width: 320px;
+  width: 310px;
   height: 320px;
   margin: 10px 5px;
   -moz-border-radius: 5px;

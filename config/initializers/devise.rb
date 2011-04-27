@@ -52,7 +52,7 @@ Devise.setup do |config|
   # The realm used in Http Basic Authentication. "Application" by default.
   # config.http_authentication_realm = "Application"
   authprov = oa_config[:facebook]
-  config.omniauth :facebook, authprov["api_key"], authprov["secret_key"], {:scope => 'publish_stream,offline_access,email'}
+  config.omniauth :facebook, authprov["api_key"], authprov["secret_key"], {:scope => 'publish_stream,email'}
   authprov = oa_config[:twitter]
   config.omniauth :twitter, authprov["consumer_key"], authprov["consumer_secret"]
   
