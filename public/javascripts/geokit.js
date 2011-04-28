@@ -1,4 +1,6 @@
 var map;
+var create_day_marker;
+
 var bounds;
 
 $(function () {
@@ -40,10 +42,6 @@ function add_marker(lat, lng, title, url)
         position: latlng, 
         map: map,
         title: title});
-		
-	var infowindow = new google.maps.InfoWindow({
-        content: "test content"
-    });
 	
 	google.maps.event.addListener(marker, 'click', function() {
       location.href = url
@@ -52,6 +50,33 @@ function add_marker(lat, lng, title, url)
 		
 	bounds.extend(latlng);
 };
+
+function add_create_day_marker(lat, lng, title)
+{
+	var latlng = new google.maps.LatLng(lat, lng);
+	
+	//clean out existing marker and bounds if we have one (only 1 allowed on create day
+	if (create_day_marker)
+	{
+		create_day_marker.setMap(null);	
+		bounds = new google.maps.LatLngBounds();
+	}
+	
+	create_day_marker = new google.maps.Marker({
+        position: latlng, 
+        map: map,
+        title: title, draggable:true});
+		
+	bounds.extend(latlng);
+
+	google.maps.event.addListener(create_day_marker, 'dragend', function() {
+	create_day_marker.getPosition()
+	$("#day_latitude").val(create_day_marker.getPosition().lat());
+				$("#day_longitude").val(create_day_marker.getPosition().lng());
+  });
+
+
+}
 
 function center_and_bound_map()
 {
@@ -70,7 +95,7 @@ $.fn.day_location_autocomplete = function(settings) {
 				$("#day_latitude").val(ui.item.lat);
 				$("#day_longitude").val(ui.item.lng);
 
-				add_marker(ui.item.lat, ui.item.lng, 'Location');
+				add_create_day_marker(ui.item.lat, ui.item.lng, 'Drag me to to your spot or day!');
 				center_and_bound_map();				
             },
 
