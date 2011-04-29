@@ -38,6 +38,7 @@ H5 { margin: 5px 0px;}
 	font-weight: normal;
     border-bottom: 1px solid #CCCCCC;
     padding: 10px 10px 10px 10px;
+	margin: 5px 0px;
  }
 
 
@@ -152,23 +153,24 @@ div#header {
  
 #top_days_landing {
   float: left;
-  width: 420px;
-  margin: 10px 10px;
+  width: 440px;
+  margin: 0px 10px 10px 10px;
   overflow: hidden; 
   
   border-right: 1px solid #CCCCCC;
-  padding: 10px 10px 10px 10px;
+
 }
 
 #recent_days_landing {
   float: right;
-  width: 420px;
-  margin: 10px 10px;
+  width: 440px;
+  margin: 0px 10px 10px 10px;
   overflow: hidden;
 }
   
-#days_landing #recent_days_landing h2 {
-  color: #69b245; font-weight: normal;
+#top_days_landing h2, #recent_days_landing h2 {
+  color: #69b245; 
+  font-weight: normal;
 }
   
   
