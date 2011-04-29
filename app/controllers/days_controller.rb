@@ -61,8 +61,8 @@ class DaysController < ApplicationController
 		  if (params[:post_to_fb] == '1')
 			@user.facebook.feed!(
 			:message => @day.user.name + ' has posted a new day to Daymaven',
-			 :link => url_for(@day),
-			 :picture => 'http://daymaven.com/images/daymavensmall.gif',
+			:link => url_for(@day),
+			:picture => 'http://daymaven.com/images/daymavensmall.gif',
 			:name => @day.title,
 			:description => @day.description[0, 80] + '...')
 		  end

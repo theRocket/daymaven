@@ -30,7 +30,7 @@
 			<ul>
 				<li><%= link_to 'Add a Day', new_day_path %></li>
 				<li><%= link_to 'Add a Spot', new_day_path(:type => "2") %></li>
-				<li><%= link_to 'LinuxFest', 'http://myweb.students.wwu.edu/~kempj2/Daymaven/index.html' %> </li>
+				<li><%= link_to 'LinuxFest Map', 'http://myweb.students.wwu.edu/~kempj2/Daymaven/index.html', :id => 'linuxfest'	%> </li>
 			</ul>
 		</div>		
 		<%= render 'users/login_items' %>
