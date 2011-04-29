@@ -6,7 +6,7 @@ class DaysController < ApplicationController
     # GET /days
     # GET /days.xml
     def index
-  	@days = search(params[:search], params[:city], params[:page])
+  	@days = Day.search(params[:search], params[:city], params[:page])
 
       respond_to do |format|
         format.html # index.html.erb
@@ -103,44 +103,4 @@ class DaysController < ApplicationController
       end
     end
 	
-	def search(search, city, pagenum)
-    if search
-		Day.where(build_search_query(search, city)).order('average_rating DESC').page(pagenum).per(50)
-    else
-		Day.order('average_rating DESC').page(pagenum).per(50)
-    end
-  end
-  
-  def build_search_query(search, city ) # description (LIKE '<term1>' OR '<term2>') AND location LIKE '<city>'
-
-    array = search.split
-    like_conditions = []
-    key_count = array.size
-    
-	#handle no terms
-	if key_count > 0
-		k = "("
-	else
-		k = ""
-	end
-	
-    array.each do |value| 
-      k << "UPPER(description) LIKE UPPER('%%#{value}%%')"
-      if key_count > 1 
-        k += " or "
-      end
-      key_count -= 1
-    end
-    
-	#AND city query if terms
-	if array.size > 0
-      k += ") AND "
-	end
-	
-	k += "UPPER(location) LIKE UPPER('%%#{city}%%')"
-    like_conditions << k
-	
-	puts like_conditions
-	like_conditions
-  end
 end

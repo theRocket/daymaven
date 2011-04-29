@@ -116,8 +116,11 @@ $.fn.search_location_autocomplete = function(settings) {
             minLength: 2,
             autoFocus: true,
             select: function(event, ui) {
-				add_marker(ui.item.lat, ui.item.lng, ui.item.title);
-				center_and_bound_map()				
+			    if (map)
+				{
+					add_marker(ui.item.lat, ui.item.lng, ui.item.title);
+					center_and_bound_map()	
+				}					
             },
 
             open: function(event, ui) {
