@@ -33,12 +33,15 @@ H3, H4 a { color: #FA6900;}
 H5 { margin: 5px 0px;}
 
 #landing_blurb{
-	color: #69b245; 
+	color: #999999; 
+	text-align: center;
 	font-weight: normal;
     border-bottom: 1px solid #CCCCCC;
     padding: 10px 10px 10px 10px;
 	margin: 5px 0px;
+	font-size: 35px;
  }
+ 
 
 
 div#loginbar {
@@ -47,7 +50,7 @@ div#loginbar {
     margin: 0;
     padding: 0;
 	overflow: hidden;
-overflow: hidden;
+	overflow: hidden;
 	background-image: -moz-linear-gradient(center top , #666666, #333333);
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#666666), to(#333333));
 	background-color: #333333;
@@ -97,6 +100,10 @@ div#header {
 #smalltabs {
 	float: left;
 	position: relative;
+}
+
+#smalltabs ul{
+ padding: 0px 10px;
 }
 
 #smalltabs li{

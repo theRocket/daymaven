@@ -27,8 +27,8 @@ $(function () {
 
 	google.maps.event.addListener(map, 'zoom_changed', function() {
         zoomChangeBoundsListener = google.maps.event.addListener(map, 'bounds_changed', function(event) {
-            if (this.getZoom() > 13) // Change max/min zoom here
-                this.setZoom(13);
+            if (this.getZoom() > 14) // Change max/min zoom here
+                this.setZoom(14);
                
             google.maps.event.removeListener(zoomChangeBoundsListener);
         });
