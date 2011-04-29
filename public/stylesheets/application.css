@@ -28,7 +28,6 @@ BODY {
 }
 
 
-
 H3, H4 { color: #FA6900; margin: 5px 0px; }
 H3, H4 a { color: #FA6900;}
 H5 { margin: 5px 0px;}
@@ -44,11 +43,11 @@ H5 { margin: 5px 0px;}
 
 div#loginbar {
     height: 40px;
+	clear: both;
     margin: 0;
     padding: 0;
-    width: 100%;
-	float: left;
-
+	overflow: hidden;
+overflow: hidden;
 	background-image: -moz-linear-gradient(center top , #666666, #333333);
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#666666), to(#333333));
 	background-color: #333333;
@@ -56,6 +55,14 @@ div#loginbar {
 	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
 	-webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
 	-moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.45);
+}
+
+#loginbar_center {
+width: 960px;
+height: 40px;
+margin: 0px auto;
+overflow: hidden;
+
 }
 
 
@@ -89,6 +96,7 @@ div#header {
 
 #smalltabs {
 	float: left;
+	position: relative;
 }
 
 #smalltabs li{
@@ -112,6 +120,7 @@ div#header {
 	top: -5px;
 	position: relative;
 	text-decoration: none;
+
 	}
 
 
@@ -145,7 +154,7 @@ div#header {
  div#container {
 	width: 960px;
 	margin: 0px auto;
-	padding: 0px; 0px;
+	padding: 0px 0px;
 	clear: both;
 
 	 background-color: #5E5E5E;
@@ -194,6 +203,14 @@ input[type=submit]{
     padding: 2px 8px;
 	text-decoration: none;
 }
+input[type=submit]:hover {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+
+  border: 1px solid #dce69b;
+  color: #3c3c3c;
+}
 
 #searchgo_landing {
 	width: 140px;
@@ -237,15 +254,17 @@ li.UserManagement a {
 	border: none;
 	top: 0px;
 	position: relative;
+	
 }
 
 
 div#content {
-  float: left;
+
   margin: 10px 0px;
   padding-left: 10px;
   padding-right: 10px;
-
+  float: left;
+  
   width: 620px;
   min-height: 500px;
   overflow: hidden;

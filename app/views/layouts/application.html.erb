@@ -25,14 +25,16 @@
 <body>
 
 <div id = "loginbar">
-	<div id="smalltabs">
-		<ul>
-			<li><%= link_to 'Add a Day', new_day_path %></li>
-			<li><%= link_to 'Add a Spot', new_day_path(:type => "2") %></li>
-		</ul>
-	</div>
-		
-<%= render 'users/login_items' %>	
+	<div id="loginbar_center">
+		<div id="smalltabs">
+			<ul>
+				<li><%= link_to 'Add a Day', new_day_path %></li>
+				<li><%= link_to 'Add a Spot', new_day_path(:type => "2") %></li>
+			</ul>
+		</div>
+			
+		<%= render 'users/login_items' %>
+	</div>		
 </div>
 
 

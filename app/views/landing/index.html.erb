@@ -5,11 +5,11 @@
 	<% @days[0..3].each do |day| %>
 	
 		<h4 class="title">
-		<%= link_to day.title, @day %>
+		<%= link_to day.title, day %>
 		</h4>
 
 		<h5> created by <%= day.user.name rescue 'unknown user' %>
-	    &nbsp&nbspRating:&nbsp; <%= render '/days/average_rating', :day => day%><br/>
+	    &nbsp;&nbsp;Rating:&nbsp; <%= render '/days/average_rating', :day => day%><br>
 		</h5>
   
 		<div class="description" >
@@ -29,7 +29,7 @@
 		</h4>
 
 		<h5> created by <%= day.user.name rescue 'unknown user' %>
-	    &nbsp&nbspRating:&nbsp; <%= render '/days/average_rating', :day => day%><br/>
+	    &nbsp;&nbsp;Rating:&nbsp; <%= render '/days/average_rating', :day => day%><br>
 		</h5>
   
 		<div class="description" >
