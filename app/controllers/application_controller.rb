@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def ensure_domain
     if request.env['HTTP_HOST'] != 'daymaven.com' && Rails.env.production?
-      redirect_to "http://daymaven.com", :status => 301
+      redirect_to "http://daymaven.com" + request.request_uri, :status => 301
     end  
   end
 
