@@ -1,4 +1,7 @@
-<% @average_rating = day.average_rating %>	
+<% @average_rating = day.average_rating %>
+<% if not @average_rating %>
+<%   @average_rating = 3 %>
+<% end %>	
 <% if @average_rating != -1 %>
 		<% @average_rating.floor.times do %>
 			<img src = '/images/star-bright.png' class='star'>

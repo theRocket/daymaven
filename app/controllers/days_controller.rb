@@ -6,7 +6,7 @@ class DaysController < ApplicationController
     # GET /days
     # GET /days.xml
     def index
-  	@days = search(params[:search], params[:city], params[:page])
+  	@days = Day.search(params[:search], params[:city], params[:page])
 
       respond_to do |format|
         format.html # index.html.erb
@@ -31,6 +31,7 @@ class DaysController < ApplicationController
 
        @user = User.find(current_user);
   	    @day.user_id = @user.id
+		@day.average_rating = 3
 
       respond_to do |format|
         format.html # new.html.erb
@@ -50,6 +51,7 @@ class DaysController < ApplicationController
       @day = Day.new(params[:day])
         @user = User.find(current_user);
   			    @day.user_id = @user.id
+				@day.average_rating = 3
 
 
       respond_to do |format|
@@ -59,7 +61,8 @@ class DaysController < ApplicationController
 		  if (params[:post_to_fb] == '1')
 			@user.facebook.feed!(
 			:message => @day.user.name + ' has posted a new day to Daymaven',
-			 :link => url_for(@day),
+			:link => url_for(@day),
+			:picture => 'http://daymaven.com/images/daymavensmall.gif',
 			:name => @day.title,
 			:description => @day.description[0, 80] + '...')
 		  end
@@ -100,44 +103,4 @@ class DaysController < ApplicationController
       end
     end
 	
-	def search(search, city, pagenum)
-    if search
-		Day.where(build_search_query(search, city)).page(pagenum).per(5)
-    else
-		Day.order('title').page(pagenum).per(5)
-    end
-  end
-  
-  def build_search_query(search, city ) # description (LIKE '<term1>' OR '<term2>') AND location LIKE '<city>'
-
-    array = search.split
-    like_conditions = []
-    key_count = array.size
-    
-	#handle no terms
-	if key_count > 0
-		k = "("
-	else
-		k = ""
-	end
-	
-    array.each do |value|
-      k << "description LIKE '%%#{value}%%'"
-      if key_count > 1 
-        k += " or "
-      end
-      key_count -= 1
-    end
-    
-	#AND city query if terms
-	if array.size > 0
-      k += ") AND "
-	end
-	
-	k += "location LIKE '%%#{city}%%'"
-    like_conditions << k
-
-	puts like_conditions
-	like_conditions
-  end
 end

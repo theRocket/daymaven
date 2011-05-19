@@ -1,0 +1,43 @@
+<h2 id="landing_blurb">Find and share great local experiences.</h2>
+<div id="top_days_landing">
+	<h2>Top Days</h2>
+	<% @days = Day.search('', '', '1') %>
+	<% @days[0..3].each do |day| %>
+	
+		<h4 class="title">
+		<%= link_to day.title, day %>
+		</h4>
+
+		<h5> created by <%= day.user.name rescue 'unknown user' %>
+	    &nbsp;&nbsp;Rating:&nbsp; <%= render '/days/average_rating', :day => day%><br>
+		</h5>
+  
+		<div class="description" >
+			<%= auto_link(day.description[0,100]) %>...
+		</div>
+		</br>
+	<% end %>
+</div>
+
+<div id="recent_days_landing">
+	<h2>Recent Days</h2>
+	<% @days = Day.find(:all, :order => 'created_at DESC', :limit => '4') %>
+	<% @days.each do |day| %>
+	
+		<h4 class="title">
+		<%= link_to day.title, day %>
+		</h4>
+
+		<h5> created by <%= day.user.name rescue 'unknown user' %>
+	    &nbsp;&nbsp;Rating:&nbsp; <%= render '/days/average_rating', :day => day%><br>
+		</h5>
+  
+		<div class="description" >
+			<%= auto_link(day.description[0,100]) %>...
+		</div>
+		</br>
+	<% end %>
+</div>
+
+
+

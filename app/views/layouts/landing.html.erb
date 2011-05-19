@@ -4,10 +4,10 @@
 	<title>DayMaven - Things to do in Bellingham, WA</title>
 	<meta name="description" content="Daymaven is the place to find and share great local experiences, activities, and itineraries in Bellingham, WA and beyond.">
 	<meta name="keywords" content = "things to do in bellingham, bellingham activities, trip itineraries, what to do in bellingham">
-
+	
 	<%= javascript_include_tag :cdn, :defaults %>
 	<%= stylesheet_link_tag "application" %>
-	<%= javascript_include_tag :gmaps, "geokit" %>
+	<%= javascript_include_tag :gmaps, "geokit" %>	<%= yield :scripts %>
 	<%= yield :scripts %>
 	<%= yield :head %>
 	<%= csrf_meta_tag %>
@@ -28,52 +28,39 @@
 <body>
 
 <div id = "loginbar">
-	<div id="loginbar_center">
+	<div id = "loginbar_center">
 		<div id="smalltabs">
 			<ul>
 				<li><%= link_to 'Add a Day', new_day_path %></li>
 				<li><%= link_to 'Add a Spot', new_day_path(:type => "2") %></li>
 			</ul>
-		</div>
-			
+		</div>		
 		<%= render 'users/login_items' %>
-	</div>		
+	</div>	
 </div>
 
 
 <div id = "container">
 	<div id="header">
-
-	  <%= link_to image_tag("/images/daymaven415.png", :border =>0, :id => 'logo'), '/' %>
-	
+	  <%= link_to image_tag("/images/daymaven415.png", :border =>0, :id => 'logo'), ''%>
+    </div>	
 			
-		<div id="searchbar">	
-			<%= form_tag days_path, :method => 'get' do %>
+		<div id="searchbar_landing">		
+    		<%= form_tag days_path, :method => 'get' do %>
 			
-			<%= label_tag :city, "Filter by City" %>
-			<%= text_field_tag :city, params[:city], :id=>"city" %>
-			
-			<%= label_tag :searchtext, "  Keywords" %> 
-			<%= text_field_tag :search, params[:search], :id=>"searchtext" %>
-
-			
-			
-			<%= submit_tag "Search", :id=>"searchgo" %>
+			<%= label_tag :city, "Show me the best activities and spots for", :id=>"city_label_landing" %>
+			<%= text_field_tag :city, params[:city], :id=>"city", :value => 'Bellingham, WA, USA' %>
+		    <%= hidden_field_tag :search, params[:search], :id=>"searchtext" %>
+				
+			<%= submit_tag "Search", :id=>"searchgo_landing" %>
 			<% end %>
 		</div>
-  
-	</div>
 	
-	<div id="wrapper">
-		<div id="content">
-			<p class="notice"><%= notice %></p>		
-			<p class="alert"><%= alert %></p>
-			<%= yield %>	
+		<div id="content_landing">
+			<%= yield %>
 		</div>
 
-		<div id="map"> 
-		</div>
-
+	
 		<div id="footerwrapper">
 			<div id = "footerleft" class = "footer">
 				<ul id = "footerlinkleft" class = "footerlinks">	
@@ -92,7 +79,7 @@
 			<div id = "footerright" class = "footer">
 			</div>
 	    </div>
-	</div>
+
 </div>
 </body>
 </html>

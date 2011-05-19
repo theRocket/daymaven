@@ -1,33 +1,37 @@
 
 
 <% if @days.length < 1 %>
-  We couldn't find any days for your search criteria and city.  Want to add one?
+	We couldn't find any days for your search criteria and city.  Want to add one?
+	<br><br>
+	<div id="smalltabs">
+  		<li><%= link_to 'Add a Day', new_day_path %></li>
+		<li><%= link_to 'Add a Spot', new_day_path(:type => "2") %></li>
+	</div>
 <% end %>
 <% @days.each do |day| %>
 
-<% content_for(:scripts) do %>
-	<script type="text/javascript" charset="utf-8">
-		$(function() {
-		add_marker(<%=day.latitude%>, <%=day.longitude%>, '<%=escape_javascript(day.title)%>', '<%= days_path %>/<%= day.id %>')});
-	</script>
-<% end %>
+	<% content_for(:scripts) do %>
+		<script type="text/javascript" charset="utf-8">
+			$(function() {
+			add_marker(<%=day.latitude%>, <%=day.longitude%>, '<%=escape_javascript(day.title)%>', '<%= days_path %>/<%= day.id %>')});
+		</script>
+	<% end %>
 
 
-  <h4 class="title">
-      <%= link_to day.title, day %>
-</h4>
-<h5>
-	created by <%= day.user.name rescue 'unknown user' %>
-	    &nbsp&nbspRating:&nbsp; <%= render 'average_rating', :day => day%><br/>
-</h5>
-   
-  
+	<h4 class="title">
+		<%= link_to day.title, day %>
+	</h4>
 
-  
-  <div class="description" >
-    <%= auto_link(day.description[0,300]) %>...
+	<h5>
+		created by <%= day.user.name rescue 'unknown user' %>
+			&nbsp;&nbsp;Rating:&nbsp; <%= render 'average_rating', :day => day%><br/>
+	</h5>
+	   
+	   
+	<div class="description" >
+		<%= auto_link(day.description[0,300]) %>...
 	</div>
-	 </br>
+	<br>
 <% end %>
 
 <% content_for(:scripts) do %>

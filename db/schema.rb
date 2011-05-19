@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110418213450) do
+ActiveRecord::Schema.define(:version => 20110426021955) do
 
   create_table "activities", :force => true do |t|
     t.text     "description"
@@ -53,7 +53,8 @@ ActiveRecord::Schema.define(:version => 20110418213450) do
     t.datetime "updated_at"
     t.string   "location"
     t.datetime "event_date"
-    t.integer  "day_type",    :default => 1
+    t.integer  "day_type",                                     :default => 1
+    t.decimal  "average_rating", :precision => 2, :scale => 0, :default => 1
   end
 
   create_table "places", :force => true do |t|
