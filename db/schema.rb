@@ -46,15 +46,15 @@ ActiveRecord::Schema.define(:version => 20110426021955) do
   create_table "days", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.decimal  "latitude",    :precision => 15, :scale => 10
-    t.decimal  "longitude",   :precision => 15, :scale => 10
+    t.decimal  "latitude"
+    t.decimal  "longitude"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "location"
     t.datetime "event_date"
     t.integer  "day_type",                                     :default => 1
-    t.decimal  "average_rating", :precision => 2, :scale => 0, :default => 1
+    t.decimal  "average_rating", :precision => 2, :scale => 0, :default => 3
   end
 
   create_table "places", :force => true do |t|

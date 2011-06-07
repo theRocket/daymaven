@@ -68,4 +68,9 @@ class Day < ActiveRecord::Base
 		like_conditions
 	end  
    
+   
+  def to_param
+    "#{id}-#{CGI.escape(title+' in '+location)}"
+  end
+   
 end
