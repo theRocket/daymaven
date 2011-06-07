@@ -19,11 +19,11 @@
 
 
 	<h4 class="title">
-		<%= link_to day.title, day %>
+		<%= link_to day.title, day %> 
 	</h4>
 
 	<h5>
-		created by <%= day.user.name rescue 'unknown user' %>
+		<%= day.location %> &nbsp;&nbsp; created by <%= day.user.name rescue 'unknown user' %>
 			&nbsp;&nbsp;Rating:&nbsp; <%= render 'average_rating', :day => day%><br/>
 	</h5>
 	   
