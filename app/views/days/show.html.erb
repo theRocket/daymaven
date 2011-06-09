@@ -34,6 +34,9 @@
   <%= auto_link(@day.description.gsub(/\n/, '<br/>')) %>
 </p>
 
+<%= image_tag @day.photo(:large) %>
+
+
 <% if current_user && current_user != @day.user %>
 		Your Rating:
 		<%= render 'rating' %><br/>
@@ -51,6 +54,9 @@
 
 
 <br/>
+
+
+
 <%- if current_user %>
 	<%- if @day.user == current_user %>
 		<%= link_to 'Edit Your Day', edit_day_path(@day) %><br/>

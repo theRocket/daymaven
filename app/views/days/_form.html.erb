@@ -1,6 +1,6 @@
 <div class="box">
 
-<%= form_for(@day) do |f| %>
+<%= form_for @day, :html => { :multipart => true } do |f| %>
   <% if @day.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@day.errors.count, "error") %> prohibited this day from being saved:</h2>
@@ -36,6 +36,13 @@
     <%= f.label :description %><br />
     <%= f.text_area :description, :cols => 60, :rows => desc_rows %>
   </div>
+ 
+  <div class="field"> 
+  <%= f.label :Image %><br />
+  <%= f.file_field :photo %>
+  </div>
+  
+  <br />
   
   <div class="checkbox">
     <%= check_box_tag "post_to_fb", 1, true %> 

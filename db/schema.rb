@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110426021955) do
+ActiveRecord::Schema.define(:version => 20110608201130) do
 
   create_table "activities", :force => true do |t|
     t.text     "description"
@@ -53,8 +53,12 @@ ActiveRecord::Schema.define(:version => 20110426021955) do
     t.datetime "updated_at"
     t.string   "location"
     t.datetime "event_date"
-    t.integer  "day_type",                                     :default => 1
-    t.decimal  "average_rating", :precision => 2, :scale => 0, :default => 3
+    t.integer  "day_type",                                         :default => 1
+    t.decimal  "average_rating",     :precision => 2, :scale => 0, :default => 1
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "places", :force => true do |t|

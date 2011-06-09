@@ -6,6 +6,16 @@ class Day < ActiveRecord::Base
 	has_many :commenters, :through => :comments, :source => :users
 	has_many :ratings
 	has_many :raters, :through => :ratings, :source => :users
+	has_attached_file :photo,
+		:styles => {
+		:thumb => "100x100",
+		:large => "500x500"
+		},
+		:storage => :s3,
+		:s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+		:path => ":attachment/:id/:style.:extension",
+		:bucket => 'daymavenbucket'
+
 	  
 	validates :title,  :presence => true,
 						  :length => { :minimum => 5 }

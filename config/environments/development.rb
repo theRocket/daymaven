@@ -5,6 +5,9 @@ Daymaven::Application.configure do
   # every request.  This slows down response time but is perfect for development
   # since you don't have to restart the webserver when you make code changes.
   config.cache_classes = false
+  
+  Paperclip.options[:command_path] = File.join("c:", "ImageMagick-6.7.0-Q16")
+  Paperclip.options[:swallow_stderr] = false
 
   # Log error messages when you accidentally call methods on nil.
   config.whiny_nils = true
