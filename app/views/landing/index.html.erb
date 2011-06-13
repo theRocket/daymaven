@@ -8,7 +8,7 @@
 		<%= link_to day.title, day %>
 		</h4>
 
-		<h5> <%= day.location %> &nbsp;&nbsp; created by <%= day.user.name rescue 'unknown user' %>
+		<h5> <%= day.location %> &nbsp;&nbsp; by <%= day.user.name rescue 'unknown user' %>
 	    &nbsp;&nbsp;Rating:&nbsp; <%= render '/days/average_rating', :day => day%><br>
 		</h5>
   
@@ -28,7 +28,7 @@
 		<%= link_to day.title, day %>
 		</h4>
 
-		<h5> <%= day.location %> &nbsp;&nbsp; created by <%= day.user.name rescue 'unknown user' %>
+		<h5> <%= day.location %> &nbsp;&nbsp; by <%= day.user.name rescue 'unknown user' %>
 	    &nbsp;&nbsp;Rating:&nbsp; <%= render '/days/average_rating', :day => day%><br>
 		</h5>
   
