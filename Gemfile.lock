@@ -140,6 +140,7 @@ GEM
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
+    truncate_html (0.5.1)
     twitter (1.1.2)
       faraday (~> 0.5.4)
       faraday_middleware (~> 0.3.1)
@@ -171,4 +172,5 @@ DEPENDENCIES
   rails (= 3.0.5)
   ruby-debug19
   sqlite3-ruby
+  truncate_html
   twitter

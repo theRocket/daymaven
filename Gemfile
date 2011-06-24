@@ -13,6 +13,7 @@ gem "geokit-rails3"
 gem "kaminari"
 gem "paperclip"
 gem "aws-s3"
+gem "truncate_html"
 #gem "more", :git => "git://github.com/theRocket/more.git" # Rails 3 and Heroku compatible fork
 
 # Use unicorn as the web server
