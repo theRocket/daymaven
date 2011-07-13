@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(:version => 20110608201130) do
     t.string   "location"
     t.datetime "event_date"
     t.integer  "day_type",                                         :default => 1
-    t.decimal  "average_rating",     :precision => 2, :scale => 0, :default => 1
+    t.decimal  "average_rating",     :precision => 2, :scale => 0, :default => 3
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"

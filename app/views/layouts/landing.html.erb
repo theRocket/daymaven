@@ -42,7 +42,9 @@
 				<li><%= link_to 'Add a Day', new_day_path %></li>
 				<li><%= link_to 'Add a Spot', new_day_path(:type => "2") %></li>
 			</ul>
-		</div>		
+
+		</div>	
+
 		<%= render 'users/login_items' %>
 	</div>	
 </div>
@@ -51,7 +53,10 @@
 <div id = "container">
 	<div id="header">
 	  <%= link_to image_tag("/images/daymaven415.png", :border =>0, :id => 'logo'), ''%>
-    </div>	
+		
+	 <a href="http://twitter.com/daymaven" class="twitter-follow-button" data-button="grey" data-text-color="#FFFFFF" data-link-					  color="#00AEFF" data-show-count="false">Follow @daymaven</a>
+	<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+    	</div>	
 			
 		<div id="searchbar_landing">		
     		<%= form_tag days_path, :method => 'get' do %>
@@ -87,6 +92,8 @@
 			   <iframe src="http://www.facebook.com/plugins/like.php?href=daymaven.com" scrolling="no" frameborder="0" style="border:none; width:450px; height:80px"></iframe>
 			</div>	
 			<div id = "footerright" class = "footer">
+<a href="http://twitter.com/daymaven" class="twitter-follow-button" data-button="grey" data-text-color="#FFFFFF" data-link-color="#00AEFF" data-show-count="false">Follow @daymaven</a>
+<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
 			</div>
 	    </div>
 

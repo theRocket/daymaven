@@ -29,7 +29,7 @@
 	   
 	   
 	<div class="description" >
-		<%= auto_link(day.description[0,300]) %>...
+		<%= auto_link(truncate_html(day.description, :length => 300, :omission => '...(continued)')) %>...
 	</div>
 	<br>
 <% end %>
