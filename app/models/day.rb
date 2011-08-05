@@ -80,7 +80,7 @@ class Day < ActiveRecord::Base
    
    
   def to_param
-    "#{id}-#{CGI.escape(title+' in '+location)}"
+    "#{id}-#{CGI.escape(title.tr('.','')+' in '+location)}"
   end
    
 end
